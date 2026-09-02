@@ -1,0 +1,268 @@
+{
+  "stu-001": {
+    "studentId": "stu-001",
+    "targetRole": "AI / ML Systems Engineer (OpenAI / Anthropic Track)",
+    "totalWeeks": 4,
+    "currentWeek": 2,
+    "overallProgress": 45,
+    "generatedDate": "2026-08-25T14:00:00Z",
+    "weeks": [
+      {
+        "weekNumber": 1,
+        "theme": "Inference Server Foundations & High-Concurrency Benchmarks",
+        "tagline": "Build production FastAPI / vLLM gateway with asynchronous streaming SSE tokens.",
+        "state": "completed",
+        "progressPercentage": 100,
+        "estimatedHoursTotal": 14,
+        "keyMilestone": "Shipped vLLM streaming server achieving 450 tokens/sec under load.",
+        "tasks": [
+          {
+            "id": "t-101",
+            "title": "Async FastAPI Streaming Gateway with SSE & Backpressure",
+            "description": "Implement async request queueing and client connection drop handling for continuous generation.",
+            "estimatedHours": 4,
+            "skillsAddressed": [
+              "FastAPI & High-Throughput Services"
+            ],
+            "deliverable": "GitHub PR + Locust load test report with p99 latency < 25ms.",
+            "completed": true,
+            "status": "completed",
+            "type": "project_build"
+          },
+          {
+            "id": "t-102",
+            "title": "Tokenization & Dynamic Batching Harness",
+            "description": "Implement PagedAttention simulation harness and analyze KV-cache memory allocation patterns.",
+            "estimatedHours": 6,
+            "skillsAddressed": [
+              "PyTorch & Deep Learning",
+              "Distributed Systems & CUDA"
+            ],
+            "deliverable": "Jupyter diagnostic notebook demonstrating zero OOM crashes under 256 parallel streams.",
+            "completed": true,
+            "status": "completed",
+            "type": "deep_dive"
+          },
+          {
+            "id": "t-103",
+            "title": "OpenAI API Compatibility Layer Audit",
+            "description": "Verify drop-in compatibility for /v1/chat/completions with tool calling schemas.",
+            "estimatedHours": 4,
+            "skillsAddressed": [
+              "FastAPI & High-Throughput Services"
+            ],
+            "deliverable": "100% passing PyTest integration suite against standard SDK.",
+            "completed": true,
+            "status": "completed",
+            "type": "assessment"
+          }
+        ],
+        "resources": [
+          {
+            "title": "vLLM PagedAttention Architecture Whitepaper",
+            "provider": "UC Berkeley SkyLab",
+            "url": "https://arxiv.org/abs/2309.06180",
+            "type": "Research Paper"
+          },
+          {
+            "title": "FastAPI High-Concurrency Internal Tuning Guide",
+            "provider": "Tiangolo Docs",
+            "url": "https://fastapi.tiangolo.com/async/",
+            "type": "Documentation"
+          }
+        ]
+      },
+      {
+        "weekNumber": 2,
+        "theme": "Distributed GPU Memory Management & Tensor Parallelism",
+        "tagline": "Bridge the CUDA memory gap with custom PyTorch DDP + Ray cluster orchestration.",
+        "state": "current",
+        "progressPercentage": 50,
+        "estimatedHoursTotal": 16,
+        "keyMilestone": "Zero-copy tensor slicing across multi-GPU simulation with NCCL AllReduce.",
+        "tasks": [
+          {
+            "id": "t-201",
+            "title": "Implement Megatron-Style Tensor Parallelism in PyTorch",
+            "description": "Split linear projection weights column-wise and row-wise across 2 simulated worker processes.",
+            "estimatedHours": 6,
+            "skillsAddressed": [
+              "Distributed Systems & CUDA",
+              "PyTorch & Deep Learning"
+            ],
+            "deliverable": "Working Colab reproducing forward and backward tensor parallel passes.",
+            "completed": true,
+            "status": "completed",
+            "type": "project_build"
+          },
+          {
+            "id": "t-202",
+            "title": "Benchmark NCCL AllReduce Ring Bandwidth vs Latency",
+            "description": "Measure inter-GPU communication overhead vs compute time for 70B parameter layer sharding.",
+            "estimatedHours": 5,
+            "skillsAddressed": [
+              "Distributed Systems & CUDA"
+            ],
+            "deliverable": "Profiling flamegraph using PyTorch Kineto profiler.",
+            "completed": false,
+            "status": "in_progress",
+            "type": "deep_dive"
+          },
+          {
+            "id": "t-203",
+            "title": "Ray Cluster Job Submission & Fault Tolerance Drill",
+            "description": "Configure autoscaling Ray actor workers with healthcheck heartbeats.",
+            "estimatedHours": 5,
+            "skillsAddressed": [
+              "Kubernetes & GPU Orchestration"
+            ],
+            "deliverable": "Infrastructure script verifying worker death recovery in under 3 seconds.",
+            "completed": false,
+            "status": "pending",
+            "type": "deployment"
+          }
+        ],
+        "resources": [
+          {
+            "title": "Distributed Training and Tensor Parallelism Deep Dive",
+            "provider": "PyTorch Core Docs",
+            "url": "https://pytorch.org/tutorials/intermediate/tensor_parallel_tutorial.html",
+            "type": "Interactive Lab"
+          },
+          {
+            "title": "Ray Core GPU Scheduling Handbook",
+            "provider": "Anyscale Learning Hub",
+            "url": "https://docs.ray.io",
+            "type": "Documentation"
+          }
+        ]
+      },
+      {
+        "weekNumber": 3,
+        "theme": "Vector Retrieval & High-Speed Approximate Nearest Neighbor (ANN)",
+        "tagline": "Close the Vector DB & RAG indexing gap to achieve 90%+ readiness score.",
+        "state": "upcoming",
+        "progressPercentage": 0,
+        "estimatedHoursTotal": 14,
+        "keyMilestone": "Deploy HNSW index server with IVF-PQ quantization serving <5ms queries.",
+        "tasks": [
+          {
+            "id": "t-301",
+            "title": "HNSW Graph Index Implementation & Scalar Quantization",
+            "description": "Implement hierarchical navigable small world graph search in C++ or Cython with int8 quantization.",
+            "estimatedHours": 6,
+            "skillsAddressed": [
+              "Vector Databases & RAG Indexing"
+            ],
+            "deliverable": "Benchmarked ANN recall curve @ 10k query-per-second.",
+            "completed": false,
+            "status": "pending",
+            "type": "project_build"
+          },
+          {
+            "id": "t-302",
+            "title": "RAG Hybrid Retrieval with Reciprocal Rank Fusion",
+            "description": "Combine BM25 sparse lexical search with dense vector embeddings using RRF reranking.",
+            "estimatedHours": 5,
+            "skillsAddressed": [
+              "Vector Databases & RAG Indexing",
+              "FastAPI & High-Throughput Services"
+            ],
+            "deliverable": "Live endpoint with 94% Top-3 retrieval precision on MS-MARCO subset.",
+            "completed": false,
+            "status": "pending",
+            "type": "project_build"
+          },
+          {
+            "id": "t-303",
+            "title": "Vector DB Capacity & Egress Sizing Assessment",
+            "description": "Calculate memory footprints for 100M 1536-dim vectors across FP32, FP16, and INT8.",
+            "estimatedHours": 3,
+            "skillsAddressed": [
+              "Vector Databases & RAG Indexing"
+            ],
+            "deliverable": "Architectural blueprint and cost model document.",
+            "completed": false,
+            "status": "pending",
+            "type": "assessment"
+          }
+        ],
+        "resources": [
+          {
+            "title": "HNSW Algorithm & Theoretical Bounds",
+            "provider": "IEEE / Malkov & Yashunin",
+            "url": "https://arxiv.org/abs/1603.09320",
+            "type": "Research Paper"
+          },
+          {
+            "title": "Vector Index Tuning Blueprint",
+            "provider": "Qdrant & Pinecone Arch Docs",
+            "url": "https://qdrant.tech/documentation/",
+            "type": "Documentation"
+          }
+        ]
+      },
+      {
+        "weekNumber": 4,
+        "theme": "End-to-End System Evaluation & Mock Technical Interview Loop",
+        "tagline": "Synthesize full digital twin project artifacts into Tier 1 interview portfolio.",
+        "state": "upcoming",
+        "progressPercentage": 0,
+        "estimatedHoursTotal": 12,
+        "keyMilestone": "Complete live system design defense with 95%+ simulated hiring committee consensus.",
+        "tasks": [
+          {
+            "id": "t-401",
+            "title": "Frontier Model Serving System Design Defense",
+            "description": "Present architecture defense for a multi-tenant LLM serving platform handling 100k RPM with SLA guarantees.",
+            "estimatedHours": 5,
+            "skillsAddressed": [
+              "AI & ML Systems",
+              "Distributed Systems & CUDA",
+              "Architecture"
+            ],
+            "deliverable": "System architecture whitepaper + architecture diagram artifact.",
+            "completed": false,
+            "status": "pending",
+            "type": "deep_dive"
+          },
+          {
+            "id": "t-402",
+            "title": "Portfolio Codebase Refactoring & README Polishing",
+            "description": "Ensure OmniTensor repository has automated GitHub actions, Docker quickstart, and live interactive demo.",
+            "estimatedHours": 4,
+            "skillsAddressed": [
+              "TypeScript & Systems UI",
+              "Cloud & Systems"
+            ],
+            "deliverable": "Verified reproducible Docker image with one-click startup.",
+            "completed": false,
+            "status": "pending",
+            "type": "project_build"
+          },
+          {
+            "id": "t-403",
+            "title": "Live UNLOCK AI Readiness Re-Assessment",
+            "description": "Re-run full AI Digital Twin evaluation to verify readiness tier promotion to 91% Ready.",
+            "estimatedHours": 3,
+            "skillsAddressed": [
+              "All Target Skills"
+            ],
+            "deliverable": "Verified 90%+ readiness badge on UNLOCK profile.",
+            "completed": false,
+            "status": "pending",
+            "type": "assessment"
+          }
+        ],
+        "resources": [
+          {
+            "title": "Systems Interview Blueprint for Generative AI Infrastructure",
+            "provider": "UNLOCK AI Prep Suite",
+            "url": "https://unlock.saas/prep/systems-ai",
+            "type": "Interactive Lab"
+          }
+        ]
+      }
+    ]
+  }
+}

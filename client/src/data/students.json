@@ -1,0 +1,2141 @@
+[
+  {
+    "id": "stu-001",
+    "name": "Monisha Sree",
+    "email": "monisha.sree@stanford.edu",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "AI / ML Systems Engineer",
+    "secondaryTarget": "Full Stack Infrastructure Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 78,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "Strong core in PyTorch and Distributed Data. Closing the Ray & Vector Indexing gap will boost readiness to 91%.",
+    "weeklyProgressDelta": 4.8,
+    "matchedCount": 5,
+    "almostReadyCount": 3,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "Stanford University",
+      "degree": "B.S. in Computer Science (Artificial Intelligence Track)",
+      "major": "Computer Science",
+      "graduationYear": 2026,
+      "cgpa": 3.92,
+      "scale": 4,
+      "creditsCompleted": 108,
+      "totalCredits": 120,
+      "attendanceRate": 98,
+      "departmentRank": 4,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-1",
+        "name": "PyTorch & Deep Learning",
+        "category": "AI & ML",
+        "level": 88,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-20",
+        "evidence": "Built custom transformer fine-tuner with flash-attention v2."
+      },
+      {
+        "id": "sk-2",
+        "name": "Distributed Systems & CUDA",
+        "category": "AI & ML",
+        "level": 74,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Completed lab on tensor parallelism with PyTorch DDP."
+      },
+      {
+        "id": "sk-3",
+        "name": "FastAPI & High-Throughput Services",
+        "category": "Core Tech",
+        "level": 92,
+        "proficiency": "Expert",
+        "status": "strong",
+        "verifiedProjectsCount": 5,
+        "lastAssessed": "2026-08-28",
+        "evidence": "Engineered async microservices serving 4,000 req/sec."
+      },
+      {
+        "id": "sk-4",
+        "name": "Vector Databases & RAG Indexing",
+        "category": "AI & ML",
+        "level": 68,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Implemented Milvus & Qdrant semantic retriever benchmark."
+      },
+      {
+        "id": "sk-5",
+        "name": "Kubernetes & GPU Orchestration",
+        "category": "Cloud & Systems",
+        "level": 58,
+        "proficiency": "Learning",
+        "status": "learning",
+        "verifiedProjectsCount": 1,
+        "lastAssessed": "2026-08-01",
+        "evidence": "Deployed Ray cluster on local K3s with vLLM."
+      },
+      {
+        "id": "sk-6",
+        "name": "TypeScript & Systems UI",
+        "category": "Core Tech",
+        "level": 84,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-22",
+        "evidence": "Built real-time telemetry console with React and WebSockets."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-101",
+        "title": "OmniTensor: Distributed LLM Speculative Engine",
+        "tagline": "Low-latency inference server utilizing draft model speculation and custom CUDA kernels.",
+        "role": "Lead Systems Architect",
+        "skills": [
+          "PyTorch",
+          "CUDA",
+          "FastAPI",
+          "C++",
+          "Docker"
+        ],
+        "impactScore": 94,
+        "metrics": "2.8x speedup on Llama-3 70B inference with under 15ms TTFT.",
+        "githubUrl": "https://github.com/monishasree/omnitensor",
+        "liveUrl": "https://omnitensor.dev",
+        "date": "July 2026"
+      },
+      {
+        "id": "proj-102",
+        "title": "AuraKV: Sub-millisecond Vector Hybrid Search",
+        "tagline": "High-concurrency embedding storage with HNSW index pruning and sparse-dense reranking.",
+        "role": "Sole Creator",
+        "skills": [
+          "Vector DB",
+          "Go",
+          "Rust",
+          "gRPC"
+        ],
+        "impactScore": 89,
+        "metrics": "Indexed 10M vectors with 99.4% recall @ 10 under 8ms.",
+        "githubUrl": "https://github.com/monishasree/aurakv",
+        "date": "May 2026"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-201",
+        "name": "NVIDIA Certified: Fundamentals of Accelerated Computing",
+        "issuer": "NVIDIA Deep Learning Institute",
+        "issueDate": "June 2026",
+        "credentialId": "NVD-894129-AC",
+        "skillsVerified": [
+          "CUDA C/C++",
+          "GPU Memory Hierarchy",
+          "Parallel Optimization"
+        ],
+        "badgeColor": "#10B981"
+      },
+      {
+        "id": "cert-202",
+        "name": "AWS Certified Solutions Architect – Associate",
+        "issuer": "Amazon Web Services",
+        "issueDate": "March 2026",
+        "credentialId": "AWS-SAA-40918",
+        "skillsVerified": [
+          "Cloud Systems",
+          "VPC Architecture",
+          "Auto Scaling"
+        ],
+        "badgeColor": "#F59E0B"
+      }
+    ],
+    "hackathons": [
+      {
+        "name": "TreeHacks 2026",
+        "position": "1st Place – AI Track",
+        "date": "Feb 2026",
+        "project": "BioSynthetix Realtime Drug Lead Screener"
+      },
+      {
+        "name": "CalHacks 11.0",
+        "position": "Finalist – Best Systems Hack",
+        "date": "Oct 2025",
+        "project": "EdgeWhisper Quantized Audio Streamer"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Target Role Readiness Jump: +6%",
+        "type": "milestone",
+        "scoreDelta": "+6%"
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Published OmniTensor Research Benchmark",
+        "type": "project"
+      },
+      {
+        "date": "Jun 2026",
+        "title": "Achieved NVIDIA Accelerated Computing Cert",
+        "type": "cert"
+      },
+      {
+        "date": "May 2026",
+        "title": "Mid-Term Systems Evaluation: 98/100",
+        "type": "assessment"
+      }
+    ],
+    "bio": "Computer Science senior specializing in efficient deep learning systems, low-latency inference pipelines, and distributed GPU infrastructure.",
+    "lastSyncedAt": "2026-09-02T10:45:00Z"
+  },
+  {
+    "id": "stu-002",
+    "name": "Alex Rivera",
+    "email": "alex.rivera@berkeley.edu",
+    "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Full Stack Product Engineer",
+    "secondaryTarget": "Frontend Architect",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 86,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Exceptional frontend architecture and state design. Ready for immediate senior intern interview loops.",
+    "weeklyProgressDelta": 3.2,
+    "matchedCount": 6,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "UC Berkeley",
+      "degree": "B.S. in Electrical Engineering & Computer Sciences",
+      "major": "EECS",
+      "graduationYear": 2026,
+      "cgpa": 3.88,
+      "scale": 4,
+      "creditsCompleted": 112,
+      "totalCredits": 120,
+      "attendanceRate": 96,
+      "departmentRank": 8,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-11",
+        "name": "React, Next.js & Server Components",
+        "category": "Core Tech",
+        "level": 95,
+        "proficiency": "Expert",
+        "status": "strong",
+        "verifiedProjectsCount": 6,
+        "lastAssessed": "2026-08-25",
+        "evidence": "Architected component systems used by 50k monthly active users."
+      },
+      {
+        "id": "sk-12",
+        "name": "TypeScript & Type-Level Metaprogramming",
+        "category": "Core Tech",
+        "level": 90,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 5,
+        "lastAssessed": "2026-08-20",
+        "evidence": "Authored type-safe schema validation library on NPM."
+      },
+      {
+        "id": "sk-13",
+        "name": "PostgreSQL & Prisma ORM",
+        "category": "Core Tech",
+        "level": 82,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Optimized complex query execution plans and indexing strategy."
+      },
+      {
+        "id": "sk-14",
+        "name": "State Machines (XState) & WebSockets",
+        "category": "Core Tech",
+        "level": 85,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-14",
+        "evidence": "Built collaborative multiplayer whiteboard with CRDT sync."
+      },
+      {
+        "id": "sk-15",
+        "name": "Docker & CI/CD Pipelines",
+        "category": "Cloud & Systems",
+        "level": 70,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-05",
+        "evidence": "Configured GitHub Actions workflow for zero-downtime previews."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-103",
+        "title": "Canopy: Linear-Grade Workspace Canvas",
+        "tagline": "Sub-16ms interactive infinite canvas with optimistic updates and local-first SQLite sync.",
+        "role": "Fullstack Architect",
+        "skills": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "WebSockets",
+          "SQLite"
+        ],
+        "impactScore": 96,
+        "metrics": "Over 12,000 GitHub stars and 140 community contributors.",
+        "githubUrl": "https://github.com/alexrivera/canopy",
+        "liveUrl": "https://canopy.app",
+        "date": "August 2026"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-203",
+        "name": "Meta Certified Front-End Developer",
+        "issuer": "Meta",
+        "issueDate": "Jan 2026",
+        "credentialId": "META-FED-9912",
+        "skillsVerified": [
+          "React",
+          "UI/UX Systems",
+          "Testing"
+        ],
+        "badgeColor": "#06B6D4"
+      }
+    ],
+    "hackathons": [
+      {
+        "name": "HackMIT 2025",
+        "position": "Grand Prize Winner",
+        "date": "Sept 2025",
+        "project": "CollabGrid Realtime Spreadsheets"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Finished Canopy v2.0 Release",
+        "type": "project",
+        "scoreDelta": "+4%"
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Reached 86% Readiness Tier (Ready)",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Obsessive product engineer focused on craftsmanship, micro-interactions, optimistic state synchronization, and web performance.",
+    "lastSyncedAt": "2026-09-02T09:15:00Z"
+  },
+  {
+    "id": "stu-003",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@mit.edu",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Cloud Infrastructure & Platform Engineer",
+    "secondaryTarget": "DevOps & Reliability Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 82,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Solid Kubernetes operator knowledge and Terraform IAC proficiency. Ready for top cloud infrastructure teams.",
+    "weeklyProgressDelta": 5.1,
+    "matchedCount": 5,
+    "almostReadyCount": 3,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "MIT",
+      "degree": "B.S. in Computer Science and Engineering",
+      "major": "Computer Systems",
+      "graduationYear": 2026,
+      "cgpa": 3.95,
+      "scale": 4,
+      "creditsCompleted": 110,
+      "totalCredits": 120,
+      "attendanceRate": 99,
+      "departmentRank": 2,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-21",
+        "name": "Kubernetes & CRD Operators",
+        "category": "Cloud & Systems",
+        "level": 90,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-26",
+        "evidence": "Developed custom controller in Go for auto-scaling spot GPU nodes."
+      },
+      {
+        "id": "sk-22",
+        "name": "Terraform & Pulumi (IaC)",
+        "category": "Cloud & Systems",
+        "level": 86,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "Provisioned multi-region AWS topology with automated rollback."
+      },
+      {
+        "id": "sk-23",
+        "name": "Go & High Performance Networking",
+        "category": "Core Tech",
+        "level": 88,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Built custom eBPF packet analyzer for microsegmentation."
+      },
+      {
+        "id": "sk-24",
+        "name": "Prometheus, Grafana & OpenTelemetry",
+        "category": "Tools & Infra",
+        "level": 80,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-12",
+        "evidence": "Standardized distributed tracing across 14 internal services."
+      },
+      {
+        "id": "sk-25",
+        "name": "Rust Systems Programming",
+        "category": "Core Tech",
+        "level": 64,
+        "proficiency": "Learning",
+        "status": "improve",
+        "verifiedProjectsCount": 1,
+        "lastAssessed": "2026-08-01",
+        "evidence": "Built safe thread-pool work stealing runtime."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-104",
+        "title": "KubeDrainer: Autonomous Spot Node Evacuator",
+        "tagline": "Predictive spot termination handler leveraging AWS event bridge with zero pod disruption.",
+        "role": "Sole Author",
+        "skills": [
+          "Go",
+          "Kubernetes",
+          "AWS",
+          "Prometheus"
+        ],
+        "impactScore": 92,
+        "metrics": "Reduced cluster egress costs by 42% across 300 production nodes.",
+        "githubUrl": "https://github.com/priyasharma/kubedrainer",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-204",
+        "name": "Certified Kubernetes Administrator (CKA)",
+        "issuer": "Cloud Native Computing Foundation",
+        "issueDate": "April 2026",
+        "credentialId": "CKA-7782190",
+        "skillsVerified": [
+          "Kubernetes",
+          "Cluster Security",
+          "Networking",
+          "Storage"
+        ],
+        "badgeColor": "#10B981"
+      }
+    ],
+    "hackathons": [
+      {
+        "name": "KubeCon Student Hackathon",
+        "position": "Winner – Cloud Native Innovation",
+        "date": "Nov 2025",
+        "project": "eBPF Edge Firewall"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "CKA Certification Verified",
+        "type": "cert"
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Completed KubeDrainer Open Source Pilot",
+        "type": "project"
+      }
+    ],
+    "bio": "Systems and cloud native engineer obsessed with resilient distributed architectures, eBPF telemetry, and immutable infrastructure.",
+    "lastSyncedAt": "2026-09-02T08:30:00Z"
+  },
+  {
+    "id": "stu-004",
+    "name": "David Chen",
+    "email": "david.chen@cmu.edu",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Distributed Systems & Database Engineer",
+    "secondaryTarget": "Backend Systems Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 73,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "Strong data structures and C++ fundamentals. Closing Raft consensus edge cases will unlock Tier 1 infra matches.",
+    "weeklyProgressDelta": 4.1,
+    "matchedCount": 4,
+    "almostReadyCount": 4,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "Carnegie Mellon University",
+      "degree": "B.S. in Computer Science",
+      "major": "Systems & Algorithms",
+      "graduationYear": 2026,
+      "cgpa": 3.82,
+      "scale": 4,
+      "creditsCompleted": 104,
+      "totalCredits": 120,
+      "attendanceRate": 94,
+      "departmentRank": 12,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-31",
+        "name": "C++20 & Memory Management",
+        "category": "Core Tech",
+        "level": 86,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-24",
+        "evidence": "Built lock-free B+ Tree storage engine with SIMD vectorization."
+      },
+      {
+        "id": "sk-32",
+        "name": "Raft & Paxos Consensus",
+        "category": "Architecture",
+        "level": 66,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-16",
+        "evidence": "Implemented Raft leader election and log replication in C++."
+      },
+      {
+        "id": "sk-33",
+        "name": "LSM-Trees & RocksDB Internals",
+        "category": "Architecture",
+        "level": 75,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-11",
+        "evidence": "Wrote custom compaction filter reducing write amplification by 30%."
+      },
+      {
+        "id": "sk-34",
+        "name": "Linux Kernel & Async I/O (io_uring)",
+        "category": "Cloud & Systems",
+        "level": 72,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-04",
+        "evidence": "Benchmarked zero-copy socket transfers using io_uring."
+      },
+      {
+        "id": "sk-35",
+        "name": "Distributed Tracing & Benchmarking",
+        "category": "Tools & Infra",
+        "level": 80,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "Automated Jepsen fault injection testing suite."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-105",
+        "title": "VeloxDB: Embedded Storage Engine with MVCC",
+        "tagline": "Lock-free write-ahead log and snapshot isolation storage engine with crash consistency guarantees.",
+        "role": "Core Contributor",
+        "skills": [
+          "C++20",
+          "io_uring",
+          "CMake",
+          "GTest"
+        ],
+        "impactScore": 91,
+        "metrics": "1.4M random writes/sec on NVMe SSD testbed.",
+        "githubUrl": "https://github.com/davidchen/veloxdb",
+        "date": "June 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [
+      {
+        "name": "CMU TartanHacks",
+        "position": "2nd Place – Infrastructure",
+        "date": "Feb 2026",
+        "project": "FastWAL Zero Copy Logger"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Implemented Jepsen Test Harness",
+        "type": "assessment"
+      },
+      {
+        "date": "Jul 2026",
+        "title": "VeloxDB Benchmarks Published",
+        "type": "project"
+      }
+    ],
+    "bio": "CMU systems student passionate about storage engines, consensus protocols, and lock-free data structures.",
+    "lastSyncedAt": "2026-09-02T07:15:00Z"
+  },
+  {
+    "id": "stu-005",
+    "name": "Sarah Jenkins",
+    "email": "sarah.jenkins@stanford.edu",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Cybersecurity & Security Engineer",
+    "secondaryTarget": "Application Security Analyst",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 68,
+    "readinessTier": "Needs Work",
+    "readinessReassurance": "Outstanding binary exploitation and crypto fundamentals. Hands-on cloud security posture management needed.",
+    "weeklyProgressDelta": 6.5,
+    "matchedCount": 3,
+    "almostReadyCount": 4,
+    "skillGapsCount": 3,
+    "academic": {
+      "university": "Stanford University",
+      "degree": "B.S. in Computer Science",
+      "major": "Information Security",
+      "graduationYear": 2026,
+      "cgpa": 3.75,
+      "scale": 4,
+      "creditsCompleted": 98,
+      "totalCredits": 120,
+      "attendanceRate": 92,
+      "departmentRank": 24,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-41",
+        "name": "Vulnerability Research & Reverse Engineering",
+        "category": "Core Tech",
+        "level": 82,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-22",
+        "evidence": "Found 2 CVEs in open source C networking libraries via AFL++ fuzzing."
+      },
+      {
+        "id": "sk-42",
+        "name": "Cloud Security & IAM Hardening",
+        "category": "Cloud & Systems",
+        "level": 52,
+        "proficiency": "Learning",
+        "status": "missing",
+        "verifiedProjectsCount": 1,
+        "lastAssessed": "2026-07-28",
+        "evidence": "Audited basic AWS IAM roles using Prowler."
+      },
+      {
+        "id": "sk-43",
+        "name": "Applied Cryptography & Zero-Knowledge",
+        "category": "Core Tech",
+        "level": 74,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-14",
+        "evidence": "Implemented Groth16 zk-SNARK verification circuits in Circom."
+      },
+      {
+        "id": "sk-44",
+        "name": "AppSec & OWASP Top 10 Remediation",
+        "category": "Core Tech",
+        "level": 80,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-19",
+        "evidence": "Conducted automated SAST/DAST audits across campus microservices."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-106",
+        "title": "FuzzStream: Coverage-Guided Protocol Fuzzer",
+        "tagline": "Mutation-based fuzzer for custom binary RPC protocols with AFL++ integration.",
+        "role": "Creator",
+        "skills": [
+          "C",
+          "Python",
+          "GDB",
+          "Ghidra"
+        ],
+        "impactScore": 84,
+        "metrics": "Discovered zero-day heap out-of-bounds read in legacy broker.",
+        "githubUrl": "https://github.com/sarahjenkins/fuzzstream",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-205",
+        "name": "Certified Information Systems Security Professional (Associate)",
+        "issuer": "ISC2",
+        "issueDate": "May 2026",
+        "credentialId": "ISC2-901844",
+        "skillsVerified": [
+          "Security Architecture",
+          "Network Security",
+          "Cryptography"
+        ],
+        "badgeColor": "#F43F5E"
+      }
+    ],
+    "hackathons": [
+      {
+        "name": "DEF CON CTF Qualifier",
+        "position": "Top 20 Team",
+        "date": "May 2026",
+        "project": "Stanford CTF Team"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Started Cloud Security Gap Closure Track",
+        "type": "milestone"
+      },
+      {
+        "date": "May 2026",
+        "title": "DEF CON CTF Qualifier Placement",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Security researcher focusing on memory safety, automated protocol fuzzing, and cloud IAM least-privilege automation.",
+    "lastSyncedAt": "2026-09-02T06:45:00Z"
+  },
+  {
+    "id": "stu-006",
+    "name": "Marcus Vance",
+    "email": "marcus.vance@gatech.edu",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Data Platform & Analytics Engineer",
+    "secondaryTarget": "Machine Learning Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 84,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Top-tier Spark, dbt, and Databricks pipeline builder with proven medallion architecture implementations.",
+    "weeklyProgressDelta": 3.9,
+    "matchedCount": 6,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "Georgia Tech",
+      "degree": "B.S. in Computer Science",
+      "major": "Data & Information Internetworks",
+      "graduationYear": 2026,
+      "cgpa": 3.89,
+      "scale": 4,
+      "creditsCompleted": 114,
+      "totalCredits": 120,
+      "attendanceRate": 97,
+      "departmentRank": 6,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-51",
+        "name": "Apache Spark & PySpark Streaming",
+        "category": "Core Tech",
+        "level": 90,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 5,
+        "lastAssessed": "2026-08-27",
+        "evidence": "Engineered real-time clickstream processing engine handling 80M events/day."
+      },
+      {
+        "id": "sk-52",
+        "name": "dbt & Data Modeling (Medallion)",
+        "category": "Core Tech",
+        "level": 92,
+        "proficiency": "Expert",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-25",
+        "evidence": "Implemented bronze-silver-gold lakehouse transformations with automated testing."
+      },
+      {
+        "id": "sk-53",
+        "name": "Databricks Delta Lake & SQL",
+        "category": "Cloud & Systems",
+        "level": 86,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 4,
+        "lastAssessed": "2026-08-20",
+        "evidence": "Built ACID table pipelines with Liquid Clustering optimization."
+      },
+      {
+        "id": "sk-54",
+        "name": "Apache Kafka & Event Brokers",
+        "category": "Cloud & Systems",
+        "level": 78,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Configured multi-broker Kafka cluster with Schema Registry."
+      },
+      {
+        "id": "sk-55",
+        "name": "Airflow & DAG Orchestration",
+        "category": "Tools & Infra",
+        "level": 82,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Authored parameterized DAGs with dynamic task generation and alerts."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-107",
+        "title": "LakeStream: Streaming Lakehouse on Delta Lake",
+        "tagline": "End-to-end telemetry ingestion with automatic schema evolution and sub-second querying.",
+        "role": "Data Lead",
+        "skills": [
+          "Spark",
+          "Delta Lake",
+          "dbt",
+          "Airflow",
+          "Python"
+        ],
+        "impactScore": 93,
+        "metrics": "Cut query latencies by 65% across 4TB analytical warehouse.",
+        "githubUrl": "https://github.com/marcusvance/lakestream",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "cert-206",
+        "name": "Databricks Certified Data Engineer Professional",
+        "issuer": "Databricks",
+        "issueDate": "June 2026",
+        "credentialId": "DBX-DEP-33921",
+        "skillsVerified": [
+          "Delta Lake",
+          "Spark Optimization",
+          "Production Pipelines"
+        ],
+        "badgeColor": "#FF5500"
+      }
+    ],
+    "hackathons": [
+      {
+        "name": "Georgia Tech HackGT",
+        "position": "1st Place – Best Data Hack",
+        "date": "Oct 2025",
+        "project": "TransitPulse Atlanta"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Databricks Pro Certification Earned",
+        "type": "cert"
+      },
+      {
+        "date": "Jul 2026",
+        "title": "Deployed LakeStream Open Benchmark",
+        "type": "project"
+      }
+    ],
+    "bio": "Data engineer dedicated to scalable lakehouse architectures, streaming analytics, and automated data quality validation.",
+    "lastSyncedAt": "2026-09-02T09:00:00Z"
+  },
+  {
+    "id": "stu-007",
+    "name": "Elena Rostova",
+    "email": "elena.rostova@harvard.edu",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "AI Research Scientist",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 89,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Consistent high project impact and verified skill mastery. Priority candidate for Tier 1 partner firms.",
+    "weeklyProgressDelta": 4,
+    "matchedCount": 5,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "Harvard",
+      "degree": "B.S. in Applied Math & CS",
+      "major": "Applied Math & CS",
+      "graduationYear": 2026,
+      "cgpa": 3.96,
+      "scale": 4,
+      "creditsCompleted": 100,
+      "totalCredits": 120,
+      "attendanceRate": 92,
+      "departmentRank": 5,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-007-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 94,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-007-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 83,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-007-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 79,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-007-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 89,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-7",
+        "title": "AI Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 94,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/elenarostova/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Applied Math & CS student focused on AI Research Scientist methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-008",
+    "name": "Liam O'Connor",
+    "email": "liam.o.connor@columbia.edu",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Frontend Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 71,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "1-2 targeted skill closures away from entering top quartile readiness score.",
+    "weeklyProgressDelta": 3.2,
+    "matchedCount": 4,
+    "almostReadyCount": 3,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "Columbia",
+      "degree": "B.S. in CS",
+      "major": "CS",
+      "graduationYear": 2026,
+      "cgpa": 3.65,
+      "scale": 4,
+      "creditsCompleted": 101,
+      "totalCredits": 120,
+      "attendanceRate": 93,
+      "departmentRank": 7,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-008-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 76,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-008-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 65,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-008-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 61,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-008-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 71,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-8",
+        "title": "Frontend Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 76,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/liamoconnor/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "CS student focused on Frontend Engineer methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-009",
+    "name": "Aisha Patel",
+    "email": "aisha.patel@stanford.edu",
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "MLOps & Infra Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 81,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Consistent high project impact and verified skill mastery. Priority candidate for Tier 1 partner firms.",
+    "weeklyProgressDelta": 3.7,
+    "matchedCount": 5,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "Stanford",
+      "degree": "B.S. in CS",
+      "major": "CS",
+      "graduationYear": 2026,
+      "cgpa": 3.91,
+      "scale": 4,
+      "creditsCompleted": 102,
+      "totalCredits": 120,
+      "attendanceRate": 94,
+      "departmentRank": 9,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-009-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 86,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-009-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 75,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-009-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 71,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-009-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 81,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-9",
+        "title": "MLOps Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 86,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/aishapatel/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "CS student focused on MLOps & Infra Engineer methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-010",
+    "name": "Kenji Sato",
+    "email": "kenji.sato@cmu.edu",
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Robotics & Embedded Systems",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 77,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "1-2 targeted skill closures away from entering top quartile readiness score.",
+    "weeklyProgressDelta": 4.7,
+    "matchedCount": 4,
+    "almostReadyCount": 3,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "CMU",
+      "degree": "B.S. in Robotics",
+      "major": "Robotics",
+      "graduationYear": 2026,
+      "cgpa": 3.84,
+      "scale": 4,
+      "creditsCompleted": 103,
+      "totalCredits": 120,
+      "attendanceRate": 95,
+      "departmentRank": 11,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-010-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 82,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-010-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 71,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-010-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 67,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-010-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 77,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-10",
+        "title": "Robotics Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 82,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/kenjisato/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Robotics student focused on Robotics & Embedded Systems methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-011",
+    "name": "Chloe Dupont",
+    "email": "chloe.dupont@risdbrown.edu",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Product Designer & UI Dev",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 85,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Consistent high project impact and verified skill mastery. Priority candidate for Tier 1 partner firms.",
+    "weeklyProgressDelta": 3.6,
+    "matchedCount": 5,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "RISD / Brown",
+      "degree": "B.S. in Design & CS",
+      "major": "Design & CS",
+      "graduationYear": 2026,
+      "cgpa": 3.9,
+      "scale": 4,
+      "creditsCompleted": 104,
+      "totalCredits": 120,
+      "attendanceRate": 96,
+      "departmentRank": 13,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-011-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 90,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-011-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 79,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-011-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 75,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-011-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 85,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-11",
+        "title": "Product Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 90,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/chloedupont/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Design & CS student focused on Product Designer & UI Dev methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-012",
+    "name": "Zaid Al-Mansoor",
+    "email": "zaid.al-mansoor@utaustin.edu",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Backend Systems Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 62,
+    "readinessTier": "Needs Work",
+    "readinessReassurance": "Foundational mastery in progress. Focused lab hours and mentoring recommended.",
+    "weeklyProgressDelta": 2.8,
+    "matchedCount": 2,
+    "almostReadyCount": 3,
+    "skillGapsCount": 4,
+    "academic": {
+      "university": "UT Austin",
+      "degree": "B.S. in CS",
+      "major": "CS",
+      "graduationYear": 2026,
+      "cgpa": 3.55,
+      "scale": 4,
+      "creditsCompleted": 105,
+      "totalCredits": 120,
+      "attendanceRate": 97,
+      "departmentRank": 15,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-012-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 67,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-012-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 56,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-012-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 52,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-012-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 62,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-12",
+        "title": "Backend Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 67,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/zaidal-mansoor/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "CS student focused on Backend Systems Engineer methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-013",
+    "name": "Maya Lin",
+    "email": "maya.lin@mit.edu",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Quantum Computing Researcher",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 79,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "1-2 targeted skill closures away from entering top quartile readiness score.",
+    "weeklyProgressDelta": 2.4,
+    "matchedCount": 4,
+    "almostReadyCount": 3,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "MIT",
+      "degree": "B.S. in Physics & CS",
+      "major": "Physics & CS",
+      "graduationYear": 2026,
+      "cgpa": 3.94,
+      "scale": 4,
+      "creditsCompleted": 106,
+      "totalCredits": 120,
+      "attendanceRate": 98,
+      "departmentRank": 17,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-013-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 84,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-013-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 73,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-013-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 69,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-013-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 79,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-13",
+        "title": "Quantum Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 84,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/mayalin/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Physics & CS student focused on Quantum Computing Researcher methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-014",
+    "name": "Ethan Walker",
+    "email": "ethan.walker@ucberkeley.edu",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Full Stack Product Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 74,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "1-2 targeted skill closures away from entering top quartile readiness score.",
+    "weeklyProgressDelta": 3.7,
+    "matchedCount": 4,
+    "almostReadyCount": 3,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "UC Berkeley",
+      "degree": "B.S. in EECS",
+      "major": "EECS",
+      "graduationYear": 2026,
+      "cgpa": 3.72,
+      "scale": 4,
+      "creditsCompleted": 107,
+      "totalCredits": 120,
+      "attendanceRate": 99,
+      "departmentRank": 19,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-014-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 79,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-014-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 68,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-014-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 64,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-014-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 74,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-14",
+        "title": "Full Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 79,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/ethanwalker/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "EECS student focused on Full Stack Product Engineer methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-015",
+    "name": "Fatima Noor",
+    "email": "fatima.noor@johnshopkins.edu",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Bioinformatics ML Specialist",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 83,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Consistent high project impact and verified skill mastery. Priority candidate for Tier 1 partner firms.",
+    "weeklyProgressDelta": 3.8,
+    "matchedCount": 5,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "Johns Hopkins",
+      "degree": "B.S. in Biomedical CS",
+      "major": "Biomedical CS",
+      "graduationYear": 2026,
+      "cgpa": 3.88,
+      "scale": 4,
+      "creditsCompleted": 108,
+      "totalCredits": 120,
+      "attendanceRate": 92,
+      "departmentRank": 21,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-015-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 88,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-015-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 77,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-015-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 73,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-015-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 83,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-15",
+        "title": "Bioinformatics Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 88,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/fatimanoor/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "Biomedical CS student focused on Bioinformatics ML Specialist methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-016",
+    "name": "Lucas Silva",
+    "email": "lucas.silva@georgiatech.edu",
+    "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "DevOps & SRE Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 67,
+    "readinessTier": "Needs Work",
+    "readinessReassurance": "Foundational mastery in progress. Focused lab hours and mentoring recommended.",
+    "weeklyProgressDelta": 4.2,
+    "matchedCount": 2,
+    "almostReadyCount": 3,
+    "skillGapsCount": 4,
+    "academic": {
+      "university": "Georgia Tech",
+      "degree": "B.S. in CS",
+      "major": "CS",
+      "graduationYear": 2026,
+      "cgpa": 3.6,
+      "scale": 4,
+      "creditsCompleted": 109,
+      "totalCredits": 120,
+      "attendanceRate": 93,
+      "departmentRank": 23,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-016-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 72,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-016-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 61,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-016-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 57,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-016-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 67,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-16",
+        "title": "DevOps Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 72,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/lucassilva/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "CS student focused on DevOps & SRE Engineer methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-017",
+    "name": "Hannah Kim",
+    "email": "hannah.kim@stanford.edu",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Autonomous Driving Systems",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 87,
+    "readinessTier": "Ready",
+    "readinessReassurance": "Consistent high project impact and verified skill mastery. Priority candidate for Tier 1 partner firms.",
+    "weeklyProgressDelta": 4.8,
+    "matchedCount": 5,
+    "almostReadyCount": 2,
+    "skillGapsCount": 1,
+    "academic": {
+      "university": "Stanford",
+      "degree": "B.S. in CS",
+      "major": "CS",
+      "graduationYear": 2026,
+      "cgpa": 3.93,
+      "scale": 4,
+      "creditsCompleted": 110,
+      "totalCredits": 120,
+      "attendanceRate": 94,
+      "departmentRank": 25,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-017-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 92,
+        "proficiency": "Advanced",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-017-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 81,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-017-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 77,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-017-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 87,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-17",
+        "title": "Autonomous Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 92,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/hannahkim/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "CS student focused on Autonomous Driving Systems methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  },
+  {
+    "id": "stu-018",
+    "name": "Rohan Kapoor",
+    "email": "rohan.kapoor@upenn.edu",
+    "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+    "targetRole": "Financial Tech Systems Engineer",
+    "cohort": "Cohort 2026",
+    "classId": "cs-401",
+    "readinessScore": 76,
+    "readinessTier": "Almost Ready",
+    "readinessReassurance": "1-2 targeted skill closures away from entering top quartile readiness score.",
+    "weeklyProgressDelta": 5,
+    "matchedCount": 4,
+    "almostReadyCount": 3,
+    "skillGapsCount": 2,
+    "academic": {
+      "university": "UPenn",
+      "degree": "B.S. in CS & Finance",
+      "major": "CS & Finance",
+      "graduationYear": 2026,
+      "cgpa": 3.79,
+      "scale": 4,
+      "creditsCompleted": 111,
+      "totalCredits": 120,
+      "attendanceRate": 95,
+      "departmentRank": 27,
+      "totalStudentsInCohort": 142
+    },
+    "skills": [
+      {
+        "id": "sk-stu-018-1",
+        "name": "Core Architecture & Algorithms",
+        "category": "Core Tech",
+        "level": 81,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-20",
+        "evidence": "High performance on algorithmic design benchmarks."
+      },
+      {
+        "id": "sk-stu-018-2",
+        "name": "System Design & Distributed Patterns",
+        "category": "Architecture",
+        "level": 70,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-15",
+        "evidence": "Designed fault-tolerant microservice specs."
+      },
+      {
+        "id": "sk-stu-018-3",
+        "name": "Cloud Deployment & Linux",
+        "category": "Cloud & Systems",
+        "level": 66,
+        "proficiency": "Intermediate",
+        "status": "improve",
+        "verifiedProjectsCount": 2,
+        "lastAssessed": "2026-08-10",
+        "evidence": "Containerized multi-tier applications."
+      },
+      {
+        "id": "sk-stu-018-4",
+        "name": "Automated Testing & CI/CD",
+        "category": "Tools & Infra",
+        "level": 76,
+        "proficiency": "Intermediate",
+        "status": "strong",
+        "verifiedProjectsCount": 3,
+        "lastAssessed": "2026-08-18",
+        "evidence": "Maintained 85%+ code coverage suites."
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj-18",
+        "title": "Financial Systems Framework",
+        "tagline": "Scalable reference architecture with real-time telemetry and benchmarking.",
+        "role": "Lead Developer",
+        "skills": [
+          "TypeScript",
+          "Python",
+          "Docker",
+          "Postgres"
+        ],
+        "impactScore": 81,
+        "metrics": "Demonstrated 40% efficiency gains in controlled load test.",
+        "githubUrl": "https://github.com/rohankapoor/project",
+        "date": "July 2026"
+      }
+    ],
+    "certifications": [],
+    "hackathons": [],
+    "timeline": [
+      {
+        "date": "Aug 2026",
+        "title": "Digital Twin Recomputed: Score Updated",
+        "type": "milestone"
+      }
+    ],
+    "bio": "CS & Finance student focused on Financial Tech Systems Engineer methodologies, production excellence, and high throughput software design.",
+    "lastSyncedAt": "2026-09-02T09:30:00Z"
+  }
+]

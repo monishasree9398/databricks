@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { assetUrl } from '../../utils/assets.js';
 import {
   LockOpen,
   ArrowRight,
@@ -25,7 +26,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       {/* 1. FULL PAGE CAMPUS BACKGROUND */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/campus_hero.jpg"
+          src={assetUrl('/images/campus_hero.jpg')}
           alt="University Campus"
           className="w-full h-full object-cover object-center"
         />

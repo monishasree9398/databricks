@@ -419,7 +419,7 @@ function unlockApiPlugin(): Plugin {
 }
 
 export default defineConfig({
-  base: './',
+  base: '/databricks/',
   plugins: [react(), unlockApiPlugin()],
   server: {
     host: '127.0.0.1',

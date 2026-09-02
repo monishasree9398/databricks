@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import {
   Student,
   StudentDashboardResponse,
@@ -9,24 +9,30 @@ import {
   FacultyStudent360Response,
   ChatMessage
 } from '../types/index.js';
+import { handleClientMockRequest } from './mockService.js';
 
 const API_BASE = '/api';
 
 async function fetcher<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_BASE}${endpoint}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-    ...options,
-  });
+  try {
+    const res = await fetch(`${API_BASE}${endpoint}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...options?.headers,
+      },
+      ...options,
+    });
 
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({ error: 'Network request failed' }));
-    throw new Error(errorData.error || `HTTP ${res.status}`);
+    const contentType = res.headers.get('content-type');
+    if (res.ok && contentType && contentType.includes('application/json')) {
+      return await res.json();
+    }
+  } catch (e) {
+    // In static hosting environments like GitHub Pages or offline, fallback to embedded client fixtures
   }
 
-  return res.json();
+  // Fallback to high-fidelity client mock data
+  return handleClientMockRequest(endpoint, options) as T;
 }
 
 // Student Hooks
@@ -115,8 +121,8 @@ export function useFacultyStudent360(studentId: string) {
 
 export function useFacultySkillGaps(classId: string = 'cs-401') {
   return useQuery({
-    queryKey: ['faculty-skill-gaps', classId],
-    queryFn: () => fetcher<FacultyDashboardData['rankedClassSkillGaps']>(`/faculty/${classId}/skill-gaps`),
+    queryKey: ['faculty-skillgaps', classId],
+    queryFn: () => fetcher<any[]>(`/faculty/${classId}/skill-gaps`),
     enabled: !!classId,
   });
 }
@@ -124,7 +130,7 @@ export function useFacultySkillGaps(classId: string = 'cs-401') {
 export function useFacultyAIInsights(classId: string = 'cs-401') {
   return useQuery({
     queryKey: ['faculty-ai-insights', classId],
-    queryFn: () => fetcher<{ classId: string; insights: any[]; actionPlanPreset: any }>(`/faculty/${classId}/ai-insights`),
+    queryFn: () => fetcher<any>(`/faculty/${classId}/ai-insights`),
     enabled: !!classId,
   });
 }

@@ -1,0 +1,121 @@
+{
+  "classId": "cs-401",
+  "className": "CS 401: Advanced Systems & AI Engineering Capstone",
+  "department": "Department of Computer Science & EECS",
+  "semester": "Fall 2026",
+  "academicYear": "2025–2026",
+  "totalHeadcount": 142,
+  "averageReadinessScore": 76.4,
+  "averageWeeklyGrowth": 4.2,
+  "readinessDistribution": {
+    "ready": 48,
+    "readyPercentage": 33.8,
+    "almostReady": 69,
+    "almostReadyPercentage": 48.6,
+    "needsSupport": 25,
+    "needsSupportPercentage": 17.6
+  },
+  "topHiringRoles": [
+    {
+      "role": "AI / ML Systems Engineer",
+      "studentMatchRate": 84,
+      "demandIndex": "Very High (+38% YoY)"
+    },
+    {
+      "role": "Distributed Systems & Cloud Engineer",
+      "studentMatchRate": 78,
+      "demandIndex": "High (+24% YoY)"
+    },
+    {
+      "role": "Full Stack Product Engineer",
+      "studentMatchRate": 91,
+      "demandIndex": "High (+18% YoY)"
+    },
+    {
+      "role": "Data Platform & Lakehouse Engineer",
+      "studentMatchRate": 72,
+      "demandIndex": "Surging (+44% YoY)"
+    }
+  ],
+  "rankedClassSkillGaps": [
+    {
+      "skillName": "Distributed Systems & Tensor Parallelism",
+      "category": "AI & ML",
+      "classProficiencyAvg": 58.2,
+      "studentsDeficientCount": 64,
+      "cohortDeficiencyPercentage": 45.1,
+      "industryDemandScore": 96,
+      "priority": "Urgent",
+      "suggestedIntervention": "Schedule a 2-part intensive lab on PyTorch DDP / NCCL inter-node communications."
+    },
+    {
+      "skillName": "Vector Databases & High-Throughput RAG",
+      "category": "AI & ML",
+      "classProficiencyAvg": 61.4,
+      "studentsDeficientCount": 52,
+      "cohortDeficiencyPercentage": 36.6,
+      "industryDemandScore": 92,
+      "priority": "Urgent",
+      "suggestedIntervention": "Assign practical Milvus/Qdrant HNSW quantization indexing project."
+    },
+    {
+      "skillName": "Kubernetes GPU Schedulers & Ray Operators",
+      "category": "Cloud & Systems",
+      "classProficiencyAvg": 54,
+      "studentsDeficientCount": 59,
+      "cohortDeficiencyPercentage": 41.5,
+      "industryDemandScore": 88,
+      "priority": "High",
+      "suggestedIntervention": "Deploy shared sandbox K8s cluster for GPU slicing and Keda autoscaling drills."
+    },
+    {
+      "skillName": "Raft Consensus & Distributed Storage Primitives",
+      "category": "Architecture",
+      "classProficiencyAvg": 63.8,
+      "studentsDeficientCount": 41,
+      "cohortDeficiencyPercentage": 28.9,
+      "industryDemandScore": 84,
+      "priority": "Moderate",
+      "suggestedIntervention": "Integrate Jepsen fault injection harness into week 4 homework."
+    },
+    {
+      "skillName": "Cloud Security & Least-Privilege IAM",
+      "category": "Cloud & Systems",
+      "classProficiencyAvg": 66.1,
+      "studentsDeficientCount": 35,
+      "cohortDeficiencyPercentage": 24.6,
+      "industryDemandScore": 81,
+      "priority": "Moderate",
+      "suggestedIntervention": "Offer optional 1-credit AWS IAM policy analysis module."
+    }
+  ],
+  "aiClassInsight": {
+    "headline": "Cohort shows 88% readiness in frontend & API design, but 45% of students face a bottleneck in GPU tensor parallelism.",
+    "analysis": "Analysis of 142 digital twins reveals an impending hiring-cycle vulnerability. While 84% of students target AI/ML Systems roles, only 38% have verified multi-GPU orchestration artifacts. Closing this specific cluster of skills will elevate 34 'Almost Ready' students into the 'Ready' tier within 3 weeks.",
+    "criticalBottleneck": "Lack of verified Multi-GPU DDP & Vector Indexing project deliverables.",
+    "actionableProposal": "Deploy UNLOCK AI's 3-Week Accelerated GPU Systems Workshop. 78% of students have prerequisite CUDA/PyTorch knowledge and need only the distributed coordination layer.",
+    "projectedCohortImpact": "+12.4% average readiness score gain, unlocking 14 additional top-tier internship placements."
+  },
+  "departmentComparison": [
+    {
+      "department": "Artificial Intelligence & Systems (CS-401)",
+      "avgReadiness": 76.4,
+      "topSpecialty": "Inference & ML Platforms"
+    },
+    {
+      "department": "Software Engineering & Web (CS-302)",
+      "avgReadiness": 81.2,
+      "topSpecialty": "Fullstack Architecture"
+    },
+    {
+      "department": "Data Science & Lakehouse (DS-450)",
+      "avgReadiness": 74.8,
+      "topSpecialty": "Delta Lake & PySpark"
+    },
+    {
+      "department": "Computer Security & Cryptography (SEC-500)",
+      "avgReadiness": 69.5,
+      "topSpecialty": "AppSec & Cryptography"
+    }
+  ]
+}

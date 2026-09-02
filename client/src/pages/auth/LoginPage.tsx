@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useApp } from '../../context/AppContext.js';
 import { Logo } from '../../components/common/Logo.js';
 import { Card } from '../../components/common/Card.js';
+import { assetUrl } from '../../utils/assets.js';
 import {
   GraduationCap,
   Users,
@@ -66,7 +67,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
       {/* Background Campus Photo with Soft Light Blur */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/campus_hero.jpg"
+          src={assetUrl('/images/campus_hero.jpg')}
           alt="Campus"
           className="w-full h-full object-cover object-center"
         />

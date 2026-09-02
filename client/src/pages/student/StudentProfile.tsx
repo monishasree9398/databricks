@@ -5,6 +5,7 @@ import { Card } from '../../components/common/Card.js';
 import { SkillBar } from '../../components/common/SkillBar.js';
 import { ReadinessGauge } from '../../components/common/ReadinessGauge.js';
 import { DashboardSkeleton } from '../../components/common/LoadingSkeleton.js';
+import { assetUrl } from '../../utils/assets.js';
 import {
   Award,
   Trophy,
@@ -176,7 +177,7 @@ export const StudentProfile: React.FC = () => {
                   {idx === 0 && (
                     <div className="relative rounded-xl overflow-hidden border border-slate-200 h-32 my-2">
                       <img
-                        src="/images/unlock_project.jpg"
+                        src={assetUrl('/images/unlock_project.jpg')}
                         alt="Project architecture"
                         className="w-full h-full object-cover"
                       />

@@ -9,6 +9,7 @@ import { NextMoveCard } from '../../components/student/NextMoveCard.js';
 import { InternshipCard } from '../../components/student/InternshipCard.js';
 import { Card } from '../../components/common/Card.js';
 import { DashboardSkeleton } from '../../components/common/LoadingSkeleton.js';
+import { assetUrl } from '../../utils/assets.js';
 import {
   Briefcase,
   GitBranch,
@@ -225,7 +226,7 @@ export const StudentDashboard: React.FC = () => {
             {/* Left: 3D Data Architecture Graphic */}
             <div className="md:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative group">
               <img
-                src="/images/unlock_project.jpg"
+                src={assetUrl('/images/unlock_project.jpg')}
                 alt="Neural Data Architecture"
                 className="w-full h-48 md:h-52 object-cover object-center group-hover:scale-102 transition-transform duration-300"
               />
