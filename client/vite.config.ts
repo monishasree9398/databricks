@@ -419,6 +419,7 @@ function unlockApiPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [react(), unlockApiPlugin()],
   server: {
     host: '127.0.0.1',
