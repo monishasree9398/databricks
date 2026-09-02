@@ -1,0 +1,121 @@
+{
+  "stu-001": {
+    "studentId": "stu-001",
+    "studentName": "Monisha Sree",
+    "targetRole": "AI / ML Systems Engineer",
+    "targetCompanyProfile": "Tier 1 AI Labs (OpenAI, Anthropic, Databricks, Stripe)",
+    "targetRoleReadiness": 78,
+    "skillsHaveCount": 3,
+    "skillsImproveCount": 2,
+    "skillsLearnCount": 1,
+    "biggestBlocker": {
+      "skill": "Distributed Systems & Multi-GPU Tensor Parallelism",
+      "reason": "OpenAI and Anthropic inference teams require verified hands-on Megatron-style column/row weight slicing and NCCL ring reduction profiling.",
+      "impactOnReadiness": "Resolving this single gap will immediately increase overall readiness score from 78% to 88% (+10%)."
+    },
+    "recommendedNextStep": {
+      "title": "Complete Distributed GPU Parallelism Lab (Roadmap Week 2)",
+      "action": "Implement 2-way tensor parallel forward pass in PyTorch using simulated NCCL communicators.",
+      "estimatedTimeToImpact": "6 hours across 2 study sessions",
+      "roadmapWeekTarget": 2
+    },
+    "gaps": [
+      {
+        "skillName": "FastAPI & High-Throughput Services",
+        "category": "Core Tech",
+        "currentLevel": 92,
+        "targetLevel": 80,
+        "status": "have",
+        "gapDelta": 0,
+        "importance": "Critical",
+        "estimatedHoursToClose": 0,
+        "recommendedAction": "Maintain mastery through active OmniTensor benchmarking PRs.",
+        "suggestedResource": {
+          "title": "FastAPI Production Best Practices",
+          "type": "Documentation",
+          "duration": "1 hr"
+        }
+      },
+      {
+        "skillName": "PyTorch & Deep Learning",
+        "category": "AI & ML",
+        "currentLevel": 88,
+        "targetLevel": 85,
+        "status": "have",
+        "gapDelta": 0,
+        "importance": "Critical",
+        "estimatedHoursToClose": 0,
+        "recommendedAction": "Showcase FlashAttention-2 custom kernel integration in portfolio.",
+        "suggestedResource": {
+          "title": "FlashAttention GPU Memory Hierarchy Lab",
+          "type": "Interactive Lab",
+          "duration": "2 hrs"
+        }
+      },
+      {
+        "skillName": "TypeScript & Systems UI",
+        "category": "Core Tech",
+        "currentLevel": 84,
+        "targetLevel": 75,
+        "status": "have",
+        "gapDelta": 0,
+        "importance": "Medium",
+        "estimatedHoursToClose": 0,
+        "recommendedAction": "Ensure telemetry dashboard supports real-time WebSockets streaming.",
+        "suggestedResource": {
+          "title": "Telemetry UI Systems Guide",
+          "type": "Code Challenge",
+          "duration": "1.5 hrs"
+        }
+      },
+      {
+        "skillName": "Distributed Systems & CUDA",
+        "category": "AI & ML",
+        "currentLevel": 74,
+        "targetLevel": 85,
+        "status": "improve",
+        "gapDelta": 11,
+        "importance": "Critical",
+        "estimatedHoursToClose": 8,
+        "recommendedAction": "Build multi-GPU tensor parallel forward/backward simulation with PyTorch DDP.",
+        "suggestedResource": {
+          "title": "Megatron-LM Sharding Blueprint",
+          "type": "Project Blueprint",
+          "duration": "6 hrs"
+        }
+      },
+      {
+        "skillName": "Vector Databases & RAG Indexing",
+        "category": "AI & ML",
+        "currentLevel": 68,
+        "targetLevel": 80,
+        "status": "improve",
+        "gapDelta": 12,
+        "importance": "High",
+        "estimatedHoursToClose": 6,
+        "recommendedAction": "Implement HNSW graph index with product quantization and RRF hybrid reranking.",
+        "suggestedResource": {
+          "title": "Vector Search Optimization & Quantization",
+          "type": "Interactive Lab",
+          "duration": "4 hrs"
+        }
+      },
+      {
+        "skillName": "Kubernetes & GPU Orchestration",
+        "category": "Cloud & Systems",
+        "currentLevel": 58,
+        "targetLevel": 75,
+        "status": "learn",
+        "gapDelta": 17,
+        "importance": "High",
+        "estimatedHoursToClose": 10,
+        "recommendedAction": "Deploy and manage Ray cluster on K8s with vLLM autoscaling deployment.",
+        "suggestedResource": {
+          "title": "Ray Operator on K8s Zero-to-Production",
+          "type": "Interactive Lab",
+          "duration": "5 hrs"
+        }
+      }
+    ]
+  }
+}

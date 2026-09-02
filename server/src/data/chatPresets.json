@@ -1,0 +1,120 @@
+{
+  "suggestedQuestions": [
+    "What is the single biggest gap blocking my OpenAI internship readiness?",
+    "How can I improve my Distributed Systems score from 74% to 85%?",
+    "Compare my digital twin against the Stripe Backend Engineer requirements.",
+    "Generate a 3-day accelerated study schedule for my upcoming week."
+  ],
+  "responses": {
+    "openai": {
+      "text": "Based on your current digital twin, your overall readiness for OpenAI's AI Systems & Inference Intern role is 78% (Almost Ready). You exceed the bar in FastAPI (92%) and Deep Learning fundamentals (88%). Your primary blocker is Distributed CUDA Parallelism (74% vs 80% minimum).",
+      "highlightedSkills": [
+        "PyTorch (88%)",
+        "FastAPI (92%)",
+        "Distributed Systems (74%)",
+        "Vector DBs (68%)"
+      ],
+      "percentages": [
+        {
+          "label": "Overall OpenAI Match",
+          "value": 78
+        },
+        {
+          "label": "Target Readiness Threshold",
+          "value": 85
+        },
+        {
+          "label": "Post-Roadmap Projection",
+          "value": 91
+        }
+      ],
+      "recommendationCards": [
+        {
+          "id": "rec-chat-1",
+          "title": "Execute Roadmap Week 2: Tensor Parallelism",
+          "description": "Complete the 2-way sharded forward pass lab in PyTorch to gain +6% readiness.",
+          "impactLabel": "+6% Readiness",
+          "effortLabel": "5 hours",
+          "actionText": "Open Week 2 Roadmap",
+          "actionType": "navigate_roadmap"
+        },
+        {
+          "id": "rec-chat-2",
+          "title": "Benchmark OmniTensor with NCCL",
+          "description": "Add a multi-GPU latency benchmark to your OmniTensor GitHub repository.",
+          "impactLabel": "Verified Proof",
+          "effortLabel": "2 hours",
+          "actionText": "View Skill Gap Details",
+          "actionType": "navigate_skillgap"
+        }
+      ]
+    },
+    "stripe": {
+      "text": "Your digital twin matches 84% with Stripe's Backend Infrastructure Intern role. Your API design and high-concurrency microservice experience are strong differentiators. Closing your PostgreSQL query indexing and Raft consensus edge cases will position you in the top 5% of applicants.",
+      "highlightedSkills": [
+        "FastAPI (92%)",
+        "PostgreSQL (82%)",
+        "Distributed Systems (74%)"
+      ],
+      "percentages": [
+        {
+          "label": "Stripe Match Readiness",
+          "value": 84
+        },
+        {
+          "label": "Database Optimization",
+          "value": 82
+        },
+        {
+          "label": "Concurrency Mastery",
+          "value": 92
+        }
+      ],
+      "recommendationCards": [
+        {
+          "id": "rec-stripe-1",
+          "title": "Add Raft Consensus Primitives to AuraKV",
+          "description": "Implement simple 3-node leader election to demonstrate distributed transaction safety.",
+          "impactLabel": "+7% Infra Match",
+          "effortLabel": "6 hours",
+          "actionText": "Explore Skill Gap",
+          "actionType": "navigate_skillgap"
+        }
+      ]
+    },
+    "generic": {
+      "text": "UNLOCK AI has analyzed your real-time digital twin. You have 3 verified strong skills, 2 areas for active improvement, and 1 emerging skill. Your weekly velocity is currently +4.8%, which places you ahead of 82% of your cohort.",
+      "highlightedSkills": [
+        "FastAPI (92%)",
+        "PyTorch (88%)",
+        "Distributed Systems (74%)",
+        "Vector DB (68%)"
+      ],
+      "percentages": [
+        {
+          "label": "Cohort Percentile",
+          "value": 86
+        },
+        {
+          "label": "Readiness Score",
+          "value": 78
+        },
+        {
+          "label": "Weekly Growth Delta",
+          "value": 4.8
+        }
+      ],
+      "recommendationCards": [
+        {
+          "id": "rec-gen-1",
+          "title": "Continue Current Milestone",
+          "description": "You have 2 pending tasks in Week 2 of your guided career roadmap.",
+          "impactLabel": "Target 85% Score",
+          "effortLabel": "3.5 hrs remaining",
+          "actionText": "Go to Roadmap",
+          "actionType": "navigate_roadmap"
+        }
+      ]
+    }
+  }
+}

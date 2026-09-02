@@ -1,0 +1,300 @@
+[
+  {
+    "id": "int-101",
+    "company": "OpenAI",
+    "role": "AI Systems & Inference Intern",
+    "location": "San Francisco, CA (Hybrid)",
+    "type": "Summer 2026",
+    "stipend": "$62 / hr + Housing Stipend",
+    "description": "Work with the Core Inference and GPU Infrastructure team building high-throughput low-latency model serving layers for frontier models.",
+    "requiredSkills": [
+      {
+        "name": "PyTorch & Deep Learning",
+        "minLevel": 80,
+        "weight": 0.35
+      },
+      {
+        "name": "Distributed Systems & CUDA",
+        "minLevel": 75,
+        "weight": 0.35
+      },
+      {
+        "name": "FastAPI & High-Throughput Services",
+        "minLevel": 75,
+        "weight": 0.3
+      }
+    ],
+    "niceToHaveSkills": [
+      "vLLM / TensorRT-LLM",
+      "Kubernetes GPU Operators",
+      "Rust"
+    ],
+    "tags": [
+      "Generative AI",
+      "Inference",
+      "GPU Kernels",
+      "Systems"
+    ]
+  },
+  {
+    "id": "int-102",
+    "company": "Stripe",
+    "role": "Backend Infrastructure Intern",
+    "location": "San Francisco, CA / Seattle, WA",
+    "type": "Summer 2026",
+    "stipend": "$58 / hr + Housing",
+    "description": "Design distributed ledger primitives, payment routing fault-tolerance, and high-concurrency payment APIs serving millions of merchants worldwide.",
+    "requiredSkills": [
+      {
+        "name": "FastAPI & High-Throughput Services",
+        "minLevel": 80,
+        "weight": 0.35
+      },
+      {
+        "name": "PostgreSQL & Prisma ORM",
+        "minLevel": 75,
+        "weight": 0.35
+      },
+      {
+        "name": "Distributed Systems & CUDA",
+        "minLevel": 70,
+        "weight": 0.3
+      }
+    ],
+    "niceToHaveSkills": [
+      "Raft Consensus",
+      "gRPC",
+      "Kafka"
+    ],
+    "tags": [
+      "Fintech",
+      "Distributed Systems",
+      "Payments",
+      "High Availability"
+    ]
+  },
+  {
+    "id": "int-103",
+    "company": "Linear",
+    "role": "Product Engineering Intern",
+    "location": "Remote (Global)",
+    "type": "Summer 2026",
+    "stipend": "$55 / hr + Tech Stipend",
+    "description": "Craft pixel-perfect, keyboard-first, sub-16ms desktop web interactions with local-first synchronisation and modern React architectures.",
+    "requiredSkills": [
+      {
+        "name": "React, Next.js & Server Components",
+        "minLevel": 85,
+        "weight": 0.4
+      },
+      {
+        "name": "TypeScript & Type-Level Metaprogramming",
+        "minLevel": 80,
+        "weight": 0.35
+      },
+      {
+        "name": "TypeScript & Systems UI",
+        "minLevel": 75,
+        "weight": 0.25
+      }
+    ],
+    "niceToHaveSkills": [
+      "SQLite / CRDTs",
+      "WebSockets",
+      "Framer Motion",
+      "Tailwind CSS"
+    ],
+    "tags": [
+      "Product Design",
+      "Craft",
+      "Local First",
+      "React"
+    ]
+  },
+  {
+    "id": "int-104",
+    "company": "Databricks",
+    "role": "Data Systems & Engine Intern",
+    "location": "Mountain View, CA",
+    "type": "Summer 2026",
+    "stipend": "$60 / hr + Relocation",
+    "description": "Help build the next generation Photon vectorised query engine, Delta Lake storage layer, and unified Lakehouse metadata catalog.",
+    "requiredSkills": [
+      {
+        "name": "Databricks Delta Lake & SQL",
+        "minLevel": 75,
+        "weight": 0.35
+      },
+      {
+        "name": "Apache Spark & PySpark Streaming",
+        "minLevel": 80,
+        "weight": 0.35
+      },
+      {
+        "name": "Distributed Systems & CUDA",
+        "minLevel": 70,
+        "weight": 0.3
+      }
+    ],
+    "niceToHaveSkills": [
+      "C++20",
+      "SIMD",
+      "Rust",
+      "Catalog Integrations"
+    ],
+    "tags": [
+      "Lakehouse",
+      "Query Engine",
+      "Spark",
+      "Data Infra"
+    ]
+  },
+  {
+    "id": "int-105",
+    "company": "Palantir",
+    "role": "Forward Deployed Software Engineer Intern",
+    "location": "New York, NY / Palo Alto, CA",
+    "type": "Summer 2026",
+    "stipend": "$57 / hr + Housing",
+    "description": "Deploy mission-critical data integration pipelines, operational ontologies, and real-time decision intelligence platforms at world-scale enterprises.",
+    "requiredSkills": [
+      {
+        "name": "FastAPI & High-Throughput Services",
+        "minLevel": 75,
+        "weight": 0.35
+      },
+      {
+        "name": "TypeScript & Systems UI",
+        "minLevel": 75,
+        "weight": 0.35
+      },
+      {
+        "name": "Kubernetes & GPU Orchestration",
+        "minLevel": 65,
+        "weight": 0.3
+      }
+    ],
+    "niceToHaveSkills": [
+      "Ontology Design",
+      "Data Modeling",
+      "High Security Environments"
+    ],
+    "tags": [
+      "Enterprise AI",
+      "Ontology",
+      "Mission Critical",
+      "Full Stack"
+    ]
+  },
+  {
+    "id": "int-106",
+    "company": "Vercel",
+    "role": "Edge Infrastructure & Frameworks Intern",
+    "location": "San Francisco, CA / Remote",
+    "type": "Summer 2026",
+    "stipend": "$56 / hr + Home Office",
+    "description": "Accelerate frontend delivery pipelines, optimize Turbopack bundling, and expand edge middleware compute runtimes for Next.js developers.",
+    "requiredSkills": [
+      {
+        "name": "React, Next.js & Server Components",
+        "minLevel": 85,
+        "weight": 0.4
+      },
+      {
+        "name": "TypeScript & Type-Level Metaprogramming",
+        "minLevel": 85,
+        "weight": 0.35
+      },
+      {
+        "name": "Docker & CI/CD Pipelines",
+        "minLevel": 70,
+        "weight": 0.25
+      }
+    ],
+    "niceToHaveSkills": [
+      "Rust / Turbopack",
+      "Wasm",
+      "Edge Compute"
+    ],
+    "tags": [
+      "Frontend Infra",
+      "Next.js",
+      "Edge Compute",
+      "Developer Tools"
+    ]
+  },
+  {
+    "id": "int-107",
+    "company": "Anthropic",
+    "role": "AI Safety & Platform Intern",
+    "location": "San Francisco, CA",
+    "type": "Summer 2026",
+    "stipend": "$65 / hr + Housing",
+    "description": "Develop automated alignment evaluation harnesses, constitutional AI probes, and distributed evaluation datasets for Claude frontier models.",
+    "requiredSkills": [
+      {
+        "name": "PyTorch & Deep Learning",
+        "minLevel": 85,
+        "weight": 0.4
+      },
+      {
+        "name": "FastAPI & High-Throughput Services",
+        "minLevel": 80,
+        "weight": 0.3
+      },
+      {
+        "name": "Vector Databases & RAG Indexing",
+        "minLevel": 70,
+        "weight": 0.3
+      }
+    ],
+    "niceToHaveSkills": [
+      "Evals Design",
+      "Interpretability",
+      "JAX"
+    ],
+    "tags": [
+      "AI Safety",
+      "Claude",
+      "Alignment",
+      "Evaluation Infrastructure"
+    ]
+  },
+  {
+    "id": "int-108",
+    "company": "Cloudflare",
+    "role": "Systems & Security Engineering Intern",
+    "location": "Austin, TX / San Francisco, CA",
+    "type": "Summer 2026",
+    "stipend": "$54 / hr + Housing",
+    "description": "Protect internet infrastructure from multi-terabit DDoS attacks and construct ultrafast Workers KV key-value distributed stores.",
+    "requiredSkills": [
+      {
+        "name": "Go & High Performance Networking",
+        "minLevel": 80,
+        "weight": 0.4
+      },
+      {
+        "name": "Vulnerability Research & Reverse Engineering",
+        "minLevel": 75,
+        "weight": 0.3
+      },
+      {
+        "name": "Kubernetes & CRD Operators",
+        "minLevel": 70,
+        "weight": 0.3
+      }
+    ],
+    "niceToHaveSkills": [
+      "eBPF / XDP",
+      "BGP Routing",
+      "Rust"
+    ],
+    "tags": [
+      "Edge Security",
+      "Networking",
+      "Distributed KV",
+      "DDoS Mitigation"
+    ]
+  }
+]

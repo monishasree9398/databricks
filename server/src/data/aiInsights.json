@@ -1,0 +1,69 @@
+{
+  "cohortInsights": [
+    {
+      "id": "ins-1",
+      "type": "opportunity",
+      "priority": "high",
+      "title": "34 Students Poised for Tier-1 Readiness Promotion",
+      "description": "A targeted 2-week focus on distributed inference concepts will lift 34 students from 'Almost Ready' (70-79%) to 'Ready' (80%+).",
+      "impact": "+24% overall placement velocity",
+      "date": "2026-09-01"
+    },
+    {
+      "id": "ins-2",
+      "type": "curriculum",
+      "priority": "high",
+      "title": "Curriculum-Market Delta: Vector Indexing & GPU Kernels",
+      "description": "Industry partner postings for Summer 2026 have increased mentions of 'vLLM', 'FlashAttention', and 'HNSW' by 210% over the last quarter.",
+      "impact": "Aligns CS 401 syllabus with live recruiter queries",
+      "date": "2026-08-29"
+    },
+    {
+      "id": "ins-3",
+      "type": "at_risk",
+      "priority": "medium",
+      "title": "6 Students Experiencing Momentum Stagnation",
+      "description": "6 students have not logged verified project commits or completed roadmap tasks in >14 days.",
+      "impact": "Proactive advisor nudging recommended",
+      "date": "2026-08-28"
+    }
+  ],
+  "actionPlanPreset": {
+    "title": "CS 401 Fall 2026: 3-Week GPU Systems & Vector Indexing Intensive",
+    "duration": "3 Weeks (12 contact hours + 18 lab hours)",
+    "targetStudentCount": 64,
+    "estimatedReadinessIncrease": "+12.4%",
+    "modules": [
+      {
+        "week": 1,
+        "title": "Distributed Memory & PyTorch Tensor Parallelism",
+        "topics": [
+          "Megatron Column/Row Sharding",
+          "NCCL Ring AllReduce",
+          "FlashAttention v2 Kernel Profiling"
+        ],
+        "labAssignment": "Build 2-GPU Llama-3 layer sharded forward pass."
+      },
+      {
+        "week": 2,
+        "title": "Vector Retrieval Architectures & Quantization",
+        "topics": [
+          "HNSW Graph Indexes",
+          "Product Quantization (PQ-128)",
+          "Reciprocal Rank Fusion Reranking"
+        ],
+        "labAssignment": "Engineer hybrid search server benchmarking 1M embeddings under 10ms."
+      },
+      {
+        "week": 3,
+        "title": "Production Serving & Ray GPU Orchestration",
+        "topics": [
+          "vLLM Continuous Batching",
+          "Ray Cluster Autoscaling",
+          "SLA Guardrails & Backpressure"
+        ],
+        "labAssignment": "Deploy production inference endpoint on cloud GPU sandbox."
+      }
+    ]
+  }
+}
