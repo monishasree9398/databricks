@@ -26,39 +26,33 @@ export const StudentProfile: React.FC = () => {
   const { academic, skills, projects, certifications, hackathons } = student;
 
   return (
-    <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-7 bg-[#F8FAFC]">
-      {/* Profile Hero Banner */}
-      <Card className="p-6 sm:p-8">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7">
+      {/* Top Banner Card */}
+      <Card className="p-6 md:p-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="flex items-start sm:items-center gap-5">
-            <div className="relative shrink-0">
-              <img
-                src={student.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"}
-                alt={student.name}
-                className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-2 ring-slate-100 shadow-sm"
-              />
-              <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 ring-2 ring-white" title="Live Synced" />
-            </div>
+          <div className="flex items-center gap-5">
+            <img
+              src={student.avatar}
+              alt={student.name}
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl object-cover shadow-neu-sm shrink-0"
+            />
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
-                  VERIFIED DIGITAL TWIN
+                <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-emerald-700 font-mono">
+                  {student.id}
                 </span>
-                <span className="text-xs font-mono text-slate-400">ID: {student.id}</span>
+                <span className="text-xs text-slate-500 font-mono font-bold">{student.cohort}</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
+              <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                 {student.name}
               </h1>
-              <p className="text-xs sm:text-sm text-brand-orange font-bold">
-                {student.targetRole}
-              </p>
-              <p className="text-xs text-slate-600 max-w-xl line-clamp-2">
-                {student.bio}
+              <p className="text-xs sm:text-sm text-brand-orange font-bold font-mono">
+                {student.email} • {student.targetRole}
               </p>
             </div>
           </div>
 
-          <div className="shrink-0 flex items-center gap-6 border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
+          <div className="shrink-0 flex items-center gap-6 border-t md:border-t-0 pt-4 md:pt-0 border-[#CAD4E0]/40">
             <ReadinessGauge
               score={student.readinessScore}
               tier={student.readinessTier}
@@ -70,20 +64,20 @@ export const StudentProfile: React.FC = () => {
       </Card>
 
       {/* Academic Record KPIs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="p-4 flex flex-col justify-between">
-          <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <Card className="p-5 flex flex-col justify-between">
+          <span className="text-[11px] font-bold text-slate-500 font-mono uppercase tracking-wider">
             Cumulative GPA
           </span>
           <div className="mt-2 flex items-baseline gap-1">
             <span className="text-2xl font-black text-slate-900 font-mono">{academic.cgpa}</span>
             <span className="text-xs text-slate-400 font-mono">/ {academic.scale}</span>
           </div>
-          <span className="text-[11px] text-slate-500 mt-1">{academic.university}</span>
+          <span className="text-[11px] text-slate-500 mt-1 font-bold">{academic.university}</span>
         </Card>
 
-        <Card className="p-4 flex flex-col justify-between">
-          <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+        <Card className="p-5 flex flex-col justify-between">
+          <span className="text-[11px] font-bold text-slate-500 font-mono uppercase tracking-wider">
             Cohort Rank
           </span>
           <div className="mt-2 flex items-baseline gap-1">
@@ -93,19 +87,19 @@ export const StudentProfile: React.FC = () => {
           <span className="text-[11px] text-emerald-700 mt-1 font-bold font-mono">Top 3% Percentile</span>
         </Card>
 
-        <Card className="p-4 flex flex-col justify-between">
-          <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+        <Card className="p-5 flex flex-col justify-between">
+          <span className="text-[11px] font-bold text-slate-500 font-mono uppercase tracking-wider">
             Degree Credits
           </span>
           <div className="mt-2 flex items-baseline gap-1">
             <span className="text-2xl font-black text-slate-900 font-mono">{academic.creditsCompleted}</span>
             <span className="text-xs text-slate-400 font-mono">/ {academic.totalCredits}</span>
           </div>
-          <span className="text-[11px] text-slate-500 mt-1">Class of {academic.graduationYear}</span>
+          <span className="text-[11px] text-slate-500 mt-1 font-bold">Class of {academic.graduationYear}</span>
         </Card>
 
-        <Card className="p-4 flex flex-col justify-between">
-          <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+        <Card className="p-5 flex flex-col justify-between">
+          <span className="text-[11px] font-bold text-slate-500 font-mono uppercase tracking-wider">
             Attendance Rate
           </span>
           <div className="mt-2 flex items-baseline gap-1">
@@ -118,17 +112,17 @@ export const StudentProfile: React.FC = () => {
       {/* Two Columns: Skills & Projects */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left: Verified Skills Matrix */}
-        <Card className="lg:col-span-5 p-6 space-y-5">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+        <Card className="lg:col-span-5 p-6 md:p-7 space-y-5">
+          <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40">
             <div>
-              <h3 className="text-base font-bold text-slate-900 font-sans">
+              <h3 className="text-base font-black text-slate-900 font-sans">
                 Verified Skills Matrix
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
                 Evaluated through code reviews & lab performance
               </p>
             </div>
-            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
               VERIFIED
             </span>
           </div>
@@ -142,10 +136,10 @@ export const StudentProfile: React.FC = () => {
 
         {/* Right: Key Project Portfolio & Certs */}
         <div className="lg:col-span-7 space-y-6">
-          <Card className="p-6 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+          <Card className="p-6 md:p-7 space-y-5">
+            <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40">
               <div>
-                <h3 className="text-base font-bold text-slate-900 font-sans">
+                <h3 className="text-base font-black text-slate-900 font-sans">
                   Digital Twin Key Artifacts & Repos
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
@@ -158,24 +152,24 @@ export const StudentProfile: React.FC = () => {
               {projects.map((proj, idx) => (
                 <div
                   key={proj.id}
-                  className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3.5 hover:border-brand-orange/40 transition-colors"
+                  className="p-5 rounded-3xl bg-[#EEF2F6] shadow-neu-sm space-y-3.5 hover:shadow-neu-flat transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900 font-sans">
+                      <h4 className="text-sm font-black text-slate-900 font-sans">
                         {proj.title}
                       </h4>
-                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <p className="text-xs text-slate-600 mt-1 leading-relaxed font-medium">
                         {proj.tagline}
                       </p>
                     </div>
-                    <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
+                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black bg-emerald-50 text-emerald-700 shadow-neu-sm shrink-0">
                       Score: {proj.impactScore}/100
                     </span>
                   </div>
 
                   {idx === 0 && (
-                    <div className="relative rounded-xl overflow-hidden border border-slate-200 h-32 my-2">
+                    <div className="relative rounded-2xl overflow-hidden shadow-neu-sm h-36 my-2">
                       <img
                         src={assetUrl('/images/unlock_project.jpg')}
                         alt="Project architecture"
@@ -184,8 +178,8 @@ export const StudentProfile: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="p-2.5 rounded-lg bg-white border border-slate-200 text-xs text-slate-700">
-                    <strong className="text-brand-orange text-[11px] uppercase tracking-wide mr-1.5 font-mono">Impact:</strong>
+                  <div className="p-3 rounded-2xl bg-[#EEF2F6] shadow-neu-pressed text-xs text-slate-700">
+                    <strong className="text-brand-orange text-[11px] uppercase tracking-wide mr-1.5 font-mono font-bold">Impact:</strong>
                     {proj.metrics}
                   </div>
 
@@ -193,7 +187,7 @@ export const StudentProfile: React.FC = () => {
                     {proj.skills.map((t: string) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-white text-slate-600 border border-slate-200"
+                        className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-bold bg-[#EEF2F6] text-slate-700 shadow-neu-sm"
                       >
                         {t}
                       </span>
@@ -205,17 +199,17 @@ export const StudentProfile: React.FC = () => {
           </Card>
 
           {/* Certifications & Hackathons Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="p-5 space-y-3">
-              <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <Card className="p-6 space-y-3">
+              <div className="flex items-center gap-2 pb-2.5 border-b border-[#CAD4E0]/40">
                 <Award className="w-4 h-4 text-brand-orange" />
-                <h4 className="text-sm font-bold text-slate-900 font-sans">
+                <h4 className="text-sm font-black text-slate-900 font-sans">
                   Certifications
                 </h4>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {certifications.map(c => (
-                  <div key={c.name} className="text-xs space-y-0.5">
+                  <div key={c.name} className="text-xs space-y-0.5 p-2 rounded-xl bg-[#EEF2F6] shadow-neu-sm">
                     <p className="font-bold text-slate-800">{c.name}</p>
                     <p className="text-[11px] text-slate-500 font-mono">{c.issuer} • {c.issueDate}</p>
                   </div>
@@ -223,16 +217,16 @@ export const StudentProfile: React.FC = () => {
               </div>
             </Card>
 
-            <Card className="p-5 space-y-3">
-              <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+            <Card className="p-6 space-y-3">
+              <div className="flex items-center gap-2 pb-2.5 border-b border-[#CAD4E0]/40">
                 <Trophy className="w-4 h-4 text-brand-orange" />
-                <h4 className="text-sm font-bold text-slate-900 font-sans">
+                <h4 className="text-sm font-black text-slate-900 font-sans">
                   Hackathons & Awards
                 </h4>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {hackathons.map(h => (
-                  <div key={h.name} className="text-xs space-y-0.5">
+                  <div key={h.name} className="text-xs space-y-0.5 p-2 rounded-xl bg-[#EEF2F6] shadow-neu-sm">
                     <p className="font-bold text-slate-800">{h.name}</p>
                     <p className="text-[11px] text-brand-orange font-bold font-mono">{h.position} • {h.date}</p>
                   </div>

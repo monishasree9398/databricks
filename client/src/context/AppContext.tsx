@@ -34,6 +34,7 @@ interface AppContextType {
   completedTasks: Record<string, boolean>;
   toggleTask: (taskId: string) => void;
   getDynamicReadinessScore: (baseScore: number) => number;
+  getDynamicReadiness: (baseScore: number) => { dynamicScore: number; dynamicTier: 'Ready' | 'Almost Ready' | 'Needs Work' | 'Foundational' };
   isSidebarCollapsed: boolean;
   setIsSidebarCollapsed: (collapsed: boolean) => void;
   toggleSidebar: () => void;
@@ -173,6 +174,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return Math.min(98, baseScore + (extraCompletedCount * 2));
   };
 
+  const getDynamicReadiness = (baseScore: number) => {
+    const extraCompletedCount = Object.values(completedTasks).filter(Boolean).length;
+    const dynamicScore = Math.min(98, baseScore + (extraCompletedCount * 2));
+    let dynamicTier: 'Ready' | 'Almost Ready' | 'Needs Work' | 'Foundational' = 'Needs Work';
+    if (dynamicScore >= 80) dynamicTier = 'Ready';
+    else if (dynamicScore >= 68) dynamicTier = 'Almost Ready';
+    else if (dynamicScore >= 55) dynamicTier = 'Needs Work';
+    else dynamicTier = 'Foundational';
+
+    return { dynamicScore, dynamicTier };
+  };
+
   const login = (newRole: AppMode, studentId: string = 'stu-001') => {
     setIsAuthenticated(true);
     setModeState(newRole);
@@ -237,6 +250,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         completedTasks,
         toggleTask,
         getDynamicReadinessScore,
+        getDynamicReadiness,
         isSidebarCollapsed,
         setIsSidebarCollapsed,
         toggleSidebar,

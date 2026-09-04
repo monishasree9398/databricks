@@ -22,46 +22,40 @@ export const SkillBar: React.FC<SkillBarProps> = ({ skill, showDetails = true, c
   const status = skill.status || (level >= 80 ? 'strong' : level >= 65 ? 'improve' : 'learning');
   const verifiedCount = 'verifiedProjectsCount' in skill ? skill.verifiedProjectsCount : undefined;
 
-  const statusConfig: Record<string, { label: string; color: string; bg: string; text: string; barColor: string }> = {
+  const statusConfig: Record<string, { label: string; bg: string; text: string; barColor: string }> = {
     strong: {
       label: 'Verified Strong',
-      color: 'text-emerald-700',
-      bg: 'bg-emerald-50 border-emerald-200',
+      bg: 'bg-emerald-50 text-emerald-700',
       text: 'text-emerald-700',
       barColor: 'bg-emerald-500',
     },
     have: {
       label: 'Mastered',
-      color: 'text-emerald-700',
-      bg: 'bg-emerald-50 border-emerald-200',
+      bg: 'bg-emerald-50 text-emerald-700',
       text: 'text-emerald-700',
       barColor: 'bg-emerald-500',
     },
     improve: {
       label: 'Needs Depth',
-      color: 'text-brand-orange',
-      bg: 'bg-orange-50 border-orange-200',
+      bg: 'bg-orange-50 text-brand-orange',
       text: 'text-brand-orange',
       barColor: 'bg-brand-orange',
     },
     learn: {
       label: 'To Learn',
-      color: 'text-blue-700',
-      bg: 'bg-blue-50 border-blue-200',
+      bg: 'bg-blue-50 text-blue-700',
       text: 'text-blue-700',
       barColor: 'bg-blue-500',
     },
     missing: {
       label: 'Gap Identified',
-      color: 'text-amber-700',
-      bg: 'bg-amber-50 border-amber-200',
+      bg: 'bg-amber-50 text-amber-700',
       text: 'text-amber-700',
       barColor: 'bg-amber-500',
     },
     learning: {
       label: 'In Progress',
-      color: 'text-blue-700',
-      bg: 'bg-blue-50 border-blue-200',
+      bg: 'bg-blue-50 text-blue-700',
       text: 'text-blue-700',
       barColor: 'bg-blue-500',
     },
@@ -70,7 +64,7 @@ export const SkillBar: React.FC<SkillBarProps> = ({ skill, showDetails = true, c
   const currentStatus = statusConfig[status.toString().toLowerCase()] || statusConfig.improve;
 
   return (
-    <div className={`space-y-1.5 ${className}`}>
+    <div className={`space-y-2 ${className}`}>
       <div className="flex items-center justify-between text-xs">
         <div className="flex items-center gap-2">
           <span className="font-bold text-slate-800 tracking-tight text-sm line-clamp-1">{name}</span>
@@ -81,22 +75,22 @@ export const SkillBar: React.FC<SkillBarProps> = ({ skill, showDetails = true, c
           )}
         </div>
         <div className="flex items-center gap-2">
-          <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border font-mono ${currentStatus.bg} ${currentStatus.text}`}>
+          <span className={`px-2.5 py-0.5 rounded-lg text-[10px] font-bold shadow-neu-sm font-mono ${currentStatus.bg}`}>
             {currentStatus.label}
           </span>
-          <span className="font-mono text-xs font-bold text-slate-700 min-w-[32px] text-right">
+          <span className="font-mono text-xs font-bold text-slate-800 min-w-[32px] text-right">
             {level}%
           </span>
         </div>
       </div>
 
-      {/* Progress Track */}
-      <div className="relative h-2 w-full rounded-full bg-slate-100 overflow-hidden">
+      {/* Sunken Neumorphic Progress Track */}
+      <div className="relative h-2.5 w-full rounded-full bg-[#EEF2F6] shadow-neu-pressed overflow-hidden p-0.5">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${level}%` }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className={`h-full rounded-full ${currentStatus.barColor}`}
+          className={`h-full rounded-full ${currentStatus.barColor} shadow-sm`}
         />
       </div>
 

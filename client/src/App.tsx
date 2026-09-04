@@ -85,7 +85,7 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex">
+    <div className="min-h-screen bg-[#EEF2F6] text-slate-900 flex">
       {/* Fixed Left Navigation Sidebar */}
       <Sidebar />
 
@@ -99,7 +99,7 @@ export const App: React.FC = () => {
         <Header />
 
         {/* Page Content with Framer Motion Page Transition */}
-        <main className="flex-1 pb-16 bg-[#F8FAFC]">
+        <main className="flex-1 pb-16 bg-[#EEF2F6]">
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}

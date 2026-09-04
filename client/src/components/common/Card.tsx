@@ -6,6 +6,7 @@ interface CardProps extends HTMLMotionProps<'div'> {
   className?: string;
   glow?: boolean;
   hover?: boolean;
+  pressed?: boolean;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -13,14 +14,19 @@ export const Card: React.FC<CardProps> = ({
   className = '',
   glow = false,
   hover = true,
+  pressed = false,
   ...props
 }) => {
+  const shadowClass = pressed
+    ? 'shadow-neu-pressed'
+    : glow
+    ? 'shadow-neu-flat ring-2 ring-brand-orange/30'
+    : 'shadow-neu-flat';
+
   return (
     <motion.div
-      whileHover={hover ? { y: -1, transition: { duration: 0.15 } } : undefined}
-      className={`relative rounded-2xl bg-white border border-slate-200 shadow-sm transition-all duration-150 ${
-        glow ? 'border-brand-orange/40 ring-1 ring-brand-orange/20' : 'hover:border-slate-300'
-      } ${className}`}
+      whileHover={hover && !pressed ? { y: -2, transition: { duration: 0.15 } } : undefined}
+      className={`relative rounded-2xl md:rounded-3xl bg-[#EEF2F6] ${shadowClass} transition-all duration-200 ${className}`}
       {...props}
     >
       {children}

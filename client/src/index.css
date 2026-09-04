@@ -4,20 +4,16 @@
 
 @layer base {
   :root {
-    --color-bg: #F8FAFC;
-    --color-surface: #FFFFFF;
-    --color-elevated: #F1F5F9;
-    --color-card: #FFFFFF;
+    --color-bg: #EEF2F6;
+    --color-surface: #EEF2F6;
+    --color-shadow-dark: #CAD4E0;
+    --color-shadow-light: #FFFFFF;
     --brand-orange: #FF5500;
   }
 
-  * {
-    border-color: #E2E8F0;
-  }
-
   body {
-    background-color: #F8FAFC;
-    color: #0F172A;
+    background-color: #EEF2F6;
+    color: #1E293B;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
@@ -32,29 +28,64 @@
   }
 }
 
-/* Custom Minimal Scrollbar */
+/* Neumorphic Reusable Utility Classes */
+.neu-flat {
+  background-color: #EEF2F6;
+  box-shadow: 6px 6px 14px #CAD4E0, -6px -6px 14px #FFFFFF;
+}
+
+.neu-flat-sm {
+  background-color: #EEF2F6;
+  box-shadow: 3px 3px 7px #CAD4E0, -3px -3px 7px #FFFFFF;
+}
+
+.neu-flat-lg {
+  background-color: #EEF2F6;
+  box-shadow: 10px 10px 24px #CAD4E0, -10px -10px 24px #FFFFFF;
+}
+
+.neu-pressed {
+  background-color: #EEF2F6;
+  box-shadow: inset 3px 3px 6px #CAD4E0, inset -3px -3px 6px #FFFFFF;
+}
+
+.neu-pressed-sm {
+  background-color: #EEF2F6;
+  box-shadow: inset 2px 2px 4px #CAD4E0, inset -2px -2px 4px #FFFFFF;
+}
+
+.neu-orange-btn {
+  background-color: #FF5500;
+  color: #FFFFFF;
+  box-shadow: 4px 4px 12px rgba(255, 85, 0, 0.35), -3px -3px 8px #FFFFFF;
+}
+
+.neu-orange-btn:hover {
+  background-color: #EA4C00;
+  box-shadow: 5px 5px 15px rgba(255, 85, 0, 0.45), -4px -4px 10px #FFFFFF;
+}
+
+.neu-orange-btn:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Soft Neumorphic Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #EEF2F6;
+  box-shadow: inset 2px 2px 4px #CAD4E0, inset -2px -2px 4px #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #CAD4E0;
   border-radius: 9999px;
+  box-shadow: 1px 1px 3px #BFCBD8, -1px -1px 3px #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
-}
-
-.text-gradient-orange {
-  color: #FF5500;
-}
-
-.border-subtle {
-  border-color: #E2E8F0;
+  background: #B0BEC5;
 }

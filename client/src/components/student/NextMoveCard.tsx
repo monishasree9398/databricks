@@ -22,11 +22,11 @@ export const NextMoveCard: React.FC<NextMoveCardProps> = ({ title, summary, acti
   };
 
   return (
-    <Card className="p-5 md:p-6 overflow-hidden relative border-orange-200 bg-orange-50/30" hover={false}>
+    <Card className="p-6 md:p-7 overflow-hidden relative" hover={false}>
       {/* Header */}
       <div className="relative flex items-center justify-between gap-4 mb-3">
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brand-orange text-white font-mono flex items-center gap-1">
+          <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-brand-orange text-white font-mono flex items-center gap-1 shadow-neu-orange">
             <Sparkles className="w-3 h-3" />
             PRIORITIZED NEXT MOVE
           </span>
@@ -44,25 +44,25 @@ export const NextMoveCard: React.FC<NextMoveCardProps> = ({ title, summary, acti
       </div>
 
       {summary && (
-        <p className="text-xs text-slate-600 leading-relaxed mb-4">
+        <p className="text-xs text-slate-600 leading-relaxed mb-5">
           {summary}
         </p>
       )}
 
       {/* Actionable Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {actions.map((act, idx) => (
           <div
             key={act.id || idx}
             onClick={() => handleAction(act)}
-            className="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-brand-orange/40 transition-all flex flex-col justify-between shadow-sm"
+            className="group cursor-pointer p-4 rounded-2xl bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat transition-all duration-200 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-1.5">
                 <span className="text-xs font-bold text-slate-900 group-hover:text-brand-orange transition-colors truncate">
                   {act.title}
                 </span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono shrink-0">
+                <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold shadow-neu-sm bg-emerald-50 text-emerald-700 font-mono shrink-0">
                   {act.impactLabel}
                 </span>
               </div>
@@ -71,7 +71,7 @@ export const NextMoveCard: React.FC<NextMoveCardProps> = ({ title, summary, acti
               </p>
             </div>
 
-            <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
+            <div className="mt-3.5 pt-3 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
               <span className="inline-flex items-center gap-1 text-slate-400 text-[11px] font-mono">
                 <Clock className="w-3 h-3" />
                 {act.effortLabel}

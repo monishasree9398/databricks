@@ -142,6 +142,7 @@ export interface SkillGapAnalysis {
     skill: string;
     reason: string;
     impactOnReadiness: string;
+    gapDelta?: number;
   };
   recommendedNextStep: {
     title: string;

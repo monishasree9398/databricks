@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useApp } from '../../context/AppContext.js';
+import { useNavigate } from 'react-router-dom';
 import { useStudentDashboard } from '../../api/client.js';
-import { ReadinessGauge } from '../../components/common/ReadinessGauge.js';
+import { useApp } from '../../context/AppContext.js';
 import { StatCard } from '../../components/common/StatCard.js';
+import { ReadinessGauge } from '../../components/common/ReadinessGauge.js';
 import { SkillBar } from '../../components/common/SkillBar.js';
 import { NextMoveCard } from '../../components/student/NextMoveCard.js';
 import { InternshipCard } from '../../components/student/InternshipCard.js';
@@ -15,13 +16,12 @@ import {
   GitBranch,
   TrendingUp,
   Zap,
-  ArrowRight,
   Sparkles,
+  ArrowRight,
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 export const StudentDashboard: React.FC = () => {
-  const { activeStudentId, getDynamicReadinessScore } = useApp();
+  const { activeStudentId, getDynamicReadiness } = useApp();
   const { data, isLoading } = useStudentDashboard(activeStudentId);
   const navigate = useNavigate();
 
@@ -33,23 +33,31 @@ export const StudentDashboard: React.FC = () => {
     );
   }
 
-  const { student, readinessScore, readinessTier, readinessReassurance, quickStats, skillsSummary, nextMove, topInternshipMatches } = data;
-  const dynamicScore = getDynamicReadinessScore(readinessScore);
-  const dynamicTier = dynamicScore >= 80 ? 'Ready' : dynamicScore >= 68 ? 'Almost Ready' : readinessTier;
+  const {
+    student,
+    readinessReassurance,
+    quickStats,
+    skillsSummary,
+    nextMove,
+    topInternshipMatches,
+  } = data;
+
+  // Interconnected live readiness score boosted by checked roadmap tasks
+  const { dynamicScore, dynamicTier } = getDynamicReadiness(student.readinessScore);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.08,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 8 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.22, ease: 'easeOut' } },
+    hidden: { opacity: 0, y: 15 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
   return (
@@ -57,30 +65,32 @@ export const StudentDashboard: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="p-6 md:p-10 max-w-7xl mx-auto space-y-7 bg-[#F8FAFC]"
+      className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7"
     >
-      {/* 1. HERO PROFILE HEADER */}
+      {/* 1. HERO STUDENT HEADER */}
       <motion.div
         variants={itemVariants}
-        className="rounded-3xl border border-slate-200 bg-white shadow-sm p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6"
+        className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-3xl bg-[#EEF2F6] shadow-neu-sm"
       >
-        <div className="flex items-start sm:items-center gap-5">
-          <div className="relative shrink-0">
+        <div className="flex items-center gap-4">
+          <div className="relative">
             <img
-              src={student.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"}
+              src={student.avatar}
               alt={student.name}
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover ring-2 ring-slate-100 shadow-sm"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover shadow-neu-sm shrink-0"
             />
-            <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 ring-2 ring-white" title="Digital Twin Live Synced" />
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 shadow-sm flex items-center justify-center">
+              <span className="w-2 h-2 rounded-full bg-white animate-ping" />
+            </div>
           </div>
 
           <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-emerald-50 text-emerald-700 border border-emerald-200">
+              <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-emerald-700 font-mono flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 LIVE SYNCED
               </span>
-              <span className="text-xs text-slate-400 font-mono">{student.cohort}</span>
+              <span className="text-xs text-slate-500 font-mono font-bold">{student.cohort}</span>
             </div>
 
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
@@ -95,7 +105,7 @@ export const StudentDashboard: React.FC = () => {
 
         <button
           onClick={() => navigate('/ask')}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-orange text-white font-bold text-xs hover:bg-brand-orangeHover shadow-sm transition-all self-start md:self-auto"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-orange text-white font-black text-xs shadow-neu-orange transition-all self-start md:self-auto"
         >
           <Sparkles className="w-4 h-4" />
           <span>Ask UNLOCK AI</span>
@@ -103,7 +113,7 @@ export const StudentDashboard: React.FC = () => {
       </motion.div>
 
       {/* 2. KPI STATS GRID */}
-      <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+      <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-5">
         <StatCard
           label="Internship Matches"
           value={quickStats.matchedInternships}
@@ -145,7 +155,7 @@ export const StudentDashboard: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
               Readiness Diagnosis
             </span>
-            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 font-mono">
+            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-slate-600 font-mono">
               CALIBRATED
             </span>
           </div>
@@ -158,8 +168,8 @@ export const StudentDashboard: React.FC = () => {
             className="my-2"
           />
 
-          <div className="mt-5 w-full pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-            <span className="text-slate-500 font-mono">Hiring Bar: <strong className="text-slate-900">80% Ready</strong></span>
+          <div className="mt-5 w-full pt-4 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
+            <span className="text-slate-500 font-mono">Hiring Bar: <strong className="text-slate-900 font-bold">80% Ready</strong></span>
             <button
               onClick={() => navigate('/skill-gap')}
               className="text-brand-orange font-bold hover:underline inline-flex items-center gap-1"
@@ -174,7 +184,7 @@ export const StudentDashboard: React.FC = () => {
           <div>
             <div className="flex items-center justify-between mb-5">
               <div>
-                <h3 className="text-base font-bold text-slate-900 tracking-tight">
+                <h3 className="text-base font-black text-slate-900 tracking-tight">
                   Verified Technical Competencies
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
@@ -182,10 +192,10 @@ export const StudentDashboard: React.FC = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 font-mono">
+                <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
                   {skillsSummary.strongCount} Strong
                 </span>
-                <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+                <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
                   {skillsSummary.improveCount} Improve
                 </span>
               </div>
@@ -198,7 +208,7 @@ export const StudentDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+          <div className="mt-5 pt-4 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
             <span className="text-slate-400 font-mono">6 verified projects</span>
             <button
               onClick={() => navigate('/profile')}
@@ -221,20 +231,20 @@ export const StudentDashboard: React.FC = () => {
 
       {/* 5. VERIFIED CAPSTONE PROJECT CARD */}
       <motion.div variants={itemVariants}>
-        <Card className="p-6 md:p-7">
+        <Card className="p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             {/* Left: 3D Data Architecture Graphic */}
-            <div className="md:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative group">
+            <div className="md:col-span-5 rounded-2xl overflow-hidden shadow-neu-sm relative group">
               <img
                 src={assetUrl('/images/unlock_project.jpg')}
                 alt="Neural Data Architecture"
                 className="w-full h-48 md:h-52 object-cover object-center group-hover:scale-102 transition-transform duration-300"
               />
               <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-mono">
-                <span className="px-2 py-0.5 rounded bg-white/90 text-brand-orange border border-slate-200 font-bold shadow-sm">
+                <span className="px-2.5 py-0.5 rounded-lg bg-[#EEF2F6]/95 text-brand-orange font-bold shadow-neu-sm">
                   CORE REPO
                 </span>
-                <span className="text-white font-bold bg-slate-900/80 px-2 py-0.5 rounded">
+                <span className="text-white font-bold bg-slate-900/85 px-2 py-0.5 rounded-lg">
                   99.9% Uptime
                 </span>
               </div>
@@ -243,13 +253,13 @@ export const StudentDashboard: React.FC = () => {
             {/* Right: Project Details */}
             <div className="md:col-span-7 space-y-3">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+                <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
                   VERIFIED REPO EVALUATION
                 </span>
                 <span className="text-xs font-mono text-slate-400">CS Capstone</span>
               </div>
 
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
+              <h3 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
                 High-Throughput Distributed LLM Serving Engine
               </h3>
 
@@ -262,7 +272,7 @@ export const StudentDashboard: React.FC = () => {
                 {['CUDA 12.2', 'PyTorch 2.4', 'vLLM', 'FastAPI', 'Docker'].map(tech => (
                   <span
                     key={tech}
-                    className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 text-slate-700 border border-slate-200"
+                    className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#EEF2F6] text-slate-700 shadow-neu-sm"
                   >
                     {tech}
                   </span>
@@ -277,7 +287,7 @@ export const StudentDashboard: React.FC = () => {
       <motion.div variants={itemVariants} className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-bold text-slate-900 tracking-tight">
+            <h3 className="text-lg font-black text-slate-900 tracking-tight">
               Top Matched Internships
             </h3>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -293,7 +303,7 @@ export const StudentDashboard: React.FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {topInternshipMatches.map(match => (
             <InternshipCard key={match.internshipId} match={match} />
           ))}

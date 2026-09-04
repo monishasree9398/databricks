@@ -42,29 +42,29 @@ export const FacultyDashboard: React.FC = () => {
   } = dashboard;
 
   return (
-    <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-7 bg-[#F8FAFC]">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7">
       {/* Faculty Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 sm:p-7 rounded-3xl bg-[#EEF2F6] shadow-neu-sm">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] text-brand-orange shadow-neu-sm font-mono">
               FACULTY COHORT
             </span>
-            <span className="text-xs text-slate-500 font-mono">
+            <span className="text-xs text-slate-500 font-mono font-bold">
               {semester} • {academicYear}
             </span>
           </div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight font-sans">
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
             {className}
           </h1>
-          <p className="text-xs text-slate-500 font-mono mt-0.5">
+          <p className="text-xs text-slate-500 font-mono font-bold mt-0.5">
             {totalHeadcount} Student Digital Twins • Stanford CS Department
           </p>
         </div>
 
         <button
           onClick={() => setIsPlanModalOpen(true)}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-orange text-white font-bold text-xs hover:bg-brand-orangeHover transition-all shadow-sm self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-orange text-white font-black text-xs shadow-neu-orange transition-all self-start sm:self-auto"
         >
           <Sparkles className="w-4 h-4" />
           <span>Generate Cohort Plan</span>
@@ -72,7 +72,7 @@ export const FacultyDashboard: React.FC = () => {
       </div>
 
       {/* Cohort KPI Stat Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
         <StatCard
           label="Cohort Headcount"
           value={totalHeadcount}
@@ -112,10 +112,10 @@ export const FacultyDashboard: React.FC = () => {
       />
 
       {/* AI Cohort Diagnosis Card */}
-      <Card className="p-6 border-orange-200 bg-orange-50/20">
+      <Card className="p-6 md:p-7" glow>
         <div className="flex items-center justify-between gap-4 mb-3">
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brand-orange text-white font-mono flex items-center gap-1">
+            <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-brand-orange text-white font-mono flex items-center gap-1 shadow-neu-orange">
               <Sparkles className="w-3 h-3" />
               AI COHORT DIAGNOSIS
             </span>
@@ -131,11 +131,11 @@ export const FacultyDashboard: React.FC = () => {
           </button>
         </div>
 
-        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
           {aiClassInsight.analysis}
         </p>
 
-        <div className="mt-4 pt-3 border-t border-orange-200/60 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div className="mt-4 pt-3.5 border-t border-[#CAD4E0]/40 flex flex-wrap items-center justify-between gap-3 text-xs">
           <span className="text-slate-500 font-mono">
             Projected Impact: <strong className="text-emerald-700">{aiClassInsight.projectedCohortImpact}</strong>
           </span>
@@ -152,10 +152,10 @@ export const FacultyDashboard: React.FC = () => {
       />
 
       {/* Top Hiring Roles Aligned */}
-      <Card className="p-6 space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+      <Card className="p-6 md:p-7 space-y-5">
+        <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40">
           <div>
-            <h3 className="text-base font-bold text-slate-900 tracking-tight font-sans">
+            <h3 className="text-base font-black text-slate-900 tracking-tight font-sans">
               Top Target Hiring Roles
             </h3>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -174,21 +174,21 @@ export const FacultyDashboard: React.FC = () => {
           {topHiringRoles.map(role => (
             <div
               key={role.role}
-              className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2"
+              className="p-4 rounded-2xl bg-[#EEF2F6] shadow-neu-sm space-y-2.5"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-slate-900 font-sans truncate">
                   {role.role}
                 </span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
                   {role.demandIndex}
                 </span>
               </div>
               <div className="flex items-baseline justify-between text-xs font-mono">
-                <span className="text-slate-500">Student Match Rate</span>
-                <span className="font-bold text-slate-900">{role.studentMatchRate}%</span>
+                <span className="text-slate-500 font-medium">Student Match Rate</span>
+                <span className="font-black text-slate-900">{role.studentMatchRate}%</span>
               </div>
-              <div className="w-full h-1.5 rounded-full bg-slate-200 overflow-hidden">
+              <div className="w-full h-2 rounded-full bg-[#EEF2F6] shadow-neu-pressed p-0.5 overflow-hidden">
                 <div
                   className="h-full rounded-full bg-brand-orange"
                   style={{ width: `${role.studentMatchRate}%` }}

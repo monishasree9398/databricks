@@ -20,29 +20,29 @@ export const FacultyAIInsights: React.FC = () => {
   const { insights = [] } = aiData;
 
   return (
-    <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-7 bg-[#F8FAFC]">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] text-brand-orange shadow-neu-sm font-mono">
               AUTOMATED COHORT INTELLIGENCE
             </span>
-            <span className="text-xs text-slate-500 font-mono">
+            <span className="text-xs text-slate-500 font-mono font-bold">
               Databricks Mosaic AI Synthesis
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
             AI Faculty Insights
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl font-medium">
             Proactive cohort diagnostic alerts, placement velocity projections, and automated intervention strategies.
           </p>
         </div>
 
         <button
           onClick={() => setIsPlanOpen(true)}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-orange text-white font-bold text-xs hover:bg-brand-orangeHover transition-all shadow-sm self-start md:self-auto"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-orange text-white font-black text-xs shadow-neu-orange transition-all self-start md:self-auto"
         >
           <Sparkles className="w-4 h-4" />
           <span>View 3-Week Action Plan</span>
@@ -50,30 +50,30 @@ export const FacultyAIInsights: React.FC = () => {
       </div>
 
       {/* Cohort Insights Grid */}
-      <div className="space-y-4">
+      <div className="space-y-5">
         {insights.map((ins: any) => (
           <Card
             key={ins.id}
-            className="p-6 border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6"
+            className="p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-6"
             glow={ins.priority === 'high'}
           >
             <div className="space-y-2 flex-1">
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+                <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] text-brand-orange shadow-neu-sm font-mono">
                   {ins.type.toUpperCase()}
                 </span>
-                <span className="text-[11px] font-mono text-slate-400">{ins.date}</span>
+                <span className="text-[11px] font-mono text-slate-400 font-bold">{ins.date}</span>
               </div>
-              <h3 className="text-base font-bold text-slate-900 font-sans">
+              <h3 className="text-base font-black text-slate-900 font-sans">
                 {ins.title}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 {ins.description}
               </p>
             </div>
 
-            <div className="flex flex-col md:items-end gap-2 shrink-0 border-t md:border-t-0 pt-3 md:pt-0 border-slate-100">
-              <span className="text-xs font-bold text-emerald-700 font-mono">
+            <div className="flex flex-col md:items-end gap-2 shrink-0 border-t md:border-t-0 pt-3 md:pt-0 border-[#CAD4E0]/40">
+              <span className="text-xs font-black text-emerald-700 font-mono">
                 {ins.impact}
               </span>
               <button

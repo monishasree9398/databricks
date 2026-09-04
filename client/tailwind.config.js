@@ -8,13 +8,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        neu: {
+          bg: '#EEF2F6',
+          surface: '#EEF2F6',
+          dark: '#CAD4E0',
+          light: '#FFFFFF',
+          text: '#1E293B',
+          muted: '#64748B',
+          dim: '#94A3B8',
+        },
         dark: {
-          bg: '#F8FAFC',
-          surface: '#FFFFFF',
-          elevated: '#F1F5F9',
-          card: '#FFFFFF',
-          border: 'rgba(226, 232, 240, 0.9)',
-          subtle: 'rgba(241, 245, 249, 0.8)',
+          bg: '#EEF2F6',
+          surface: '#EEF2F6',
+          elevated: '#E2E8F0',
+          card: '#EEF2F6',
+          border: 'rgba(203, 213, 225, 0.6)',
+          subtle: 'rgba(226, 232, 240, 0.8)',
           text: '#0F172A',
           muted: '#64748B',
           dim: '#94A3B8',
@@ -23,7 +32,7 @@ export default {
           orange: '#FF5500',
           orangeLight: '#FF6B1A',
           orangeHover: '#EA4C00',
-          orangeGlow: 'rgba(255, 85, 0, 0.08)',
+          orangeGlow: 'rgba(255, 85, 0, 0.15)',
           orangeBorder: 'rgba(255, 85, 0, 0.3)',
         },
         accent: {
@@ -35,11 +44,17 @@ export default {
         }
       },
       boxShadow: {
-        'glow-sm': '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
-        'glow-md': '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
-        'glow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.05)',
-        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04)',
-        'card-hover': '0 4px 12px 0 rgba(0, 0, 0, 0.06)',
+        // Neumorphic Soft UI Shadows
+        'neu-flat': '6px 6px 14px #CAD4E0, -6px -6px 14px #FFFFFF',
+        'neu-flat-hover': '8px 8px 18px #BFCBD8, -8px -8px 18px #FFFFFF',
+        'neu-sm': '3px 3px 7px #CAD4E0, -3px -3px 7px #FFFFFF',
+        'neu-lg': '10px 10px 24px #CAD4E0, -10px -10px 24px #FFFFFF',
+        'neu-pressed': 'inset 3px 3px 6px #CAD4E0, inset -3px -3px 6px #FFFFFF',
+        'neu-pressed-deep': 'inset 4px 4px 8px #BFCBD8, inset -4px -4px 8px #FFFFFF',
+        'neu-orange': '4px 4px 12px rgba(255, 85, 0, 0.3), -4px -4px 10px #FFFFFF',
+        'neu-orange-pressed': 'inset 3px 3px 6px #CC4400, inset -3px -3px 6px #FF7733',
+        'neu-convex': 'linear-gradient(145deg, #F8FAFC, #E2E8F0)',
+        'neu-concave': 'linear-gradient(145deg, #E2E8F0, #F8FAFC)',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],

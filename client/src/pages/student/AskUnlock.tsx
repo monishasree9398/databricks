@@ -77,15 +77,15 @@ export const AskUnlock: React.FC = () => {
   };
 
   return (
-    <div className="p-6 md:p-10 max-w-5xl mx-auto space-y-5 flex flex-col h-[calc(100vh-5rem)] bg-[#F8FAFC]">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto space-y-5 flex flex-col h-[calc(100vh-5rem)]">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-orange-50 text-brand-orange border border-orange-200 font-mono">
+            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] text-brand-orange shadow-neu-sm font-mono">
               DIGITAL TWIN ASSISTANT
             </span>
-            <span className="text-xs text-slate-500 font-mono">{activeStudent?.targetRole}</span>
+            <span className="text-xs text-slate-500 font-mono font-bold">{activeStudent?.targetRole}</span>
           </div>
           <h1 className="text-2xl font-black text-slate-900 tracking-tight font-sans">
             Ask UNLOCK AI
@@ -94,7 +94,7 @@ export const AskUnlock: React.FC = () => {
 
         <button
           onClick={() => setMessages([messages[0]])}
-          className="p-2 rounded-xl bg-white text-slate-400 hover:text-slate-700 border border-slate-200 shadow-sm transition-colors"
+          className="w-9 h-9 rounded-2xl bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat flex items-center justify-center text-slate-400 hover:text-slate-800 transition-all"
           title="Reset conversation"
         >
           <RefreshCw className="w-4 h-4" />
@@ -102,14 +102,14 @@ export const AskUnlock: React.FC = () => {
       </div>
 
       {/* Chat Messages Container */}
-      <Card className="flex-1 p-5 overflow-y-auto space-y-4 flex flex-col">
+      <Card className="flex-1 p-6 overflow-y-auto space-y-4 flex flex-col">
         <div className="flex-1 space-y-4">
           {messages.map(msg => (
             <ChatMessageItem key={msg.id} message={msg} />
           ))}
 
           {askMutation.isPending && (
-            <div className="flex items-center gap-2 text-xs text-brand-orange font-mono animate-pulse p-3 bg-orange-50 rounded-xl border border-orange-200 max-w-xs">
+            <div className="flex items-center gap-2 text-xs text-brand-orange font-mono animate-pulse p-3.5 bg-[#EEF2F6] rounded-2xl shadow-neu-sm max-w-xs">
               <Sparkles className="w-4 h-4 animate-spin" />
               <span>Synthesizing digital twin telemetry...</span>
             </div>
@@ -118,7 +118,7 @@ export const AskUnlock: React.FC = () => {
         </div>
 
         {/* Quick Prompts */}
-        <div className="pt-3 border-t border-slate-100">
+        <div className="pt-4 border-t border-[#CAD4E0]/40">
           <QuickPrompts onSelect={(p: string) => handleSend(p)} />
         </div>
       </Card>
@@ -131,12 +131,12 @@ export const AskUnlock: React.FC = () => {
           onChange={e => setInputQuery(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && handleSend()}
           placeholder="Ask UNLOCK anything about readiness, skills, or interview prep..."
-          className="w-full bg-white border border-slate-200 rounded-xl pl-4 pr-12 py-3.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-brand-orange transition-colors shadow-sm"
+          className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-2xl pl-5 pr-14 py-4 text-xs font-bold text-slate-900 placeholder:text-slate-400 focus:outline-none transition-all"
         />
         <button
           onClick={() => handleSend()}
           disabled={!inputQuery.trim() || askMutation.isPending}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-brand-orange hover:bg-brand-orangeHover text-white transition-all disabled:opacity-40"
+          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-2.5 rounded-xl bg-brand-orange text-white shadow-neu-orange transition-all disabled:opacity-40"
         >
           <Send className="w-4 h-4" />
         </button>

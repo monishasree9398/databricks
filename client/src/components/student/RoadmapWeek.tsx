@@ -26,15 +26,15 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
 
   const stateColors = {
     completed: {
-      badge: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      badge: 'bg-emerald-50 text-emerald-700 shadow-neu-sm',
       label: 'Completed',
     },
     current: {
-      badge: 'bg-orange-50 text-brand-orange border-orange-200',
+      badge: 'bg-orange-50 text-brand-orange shadow-neu-sm',
       label: 'Active Sprint',
     },
     upcoming: {
-      badge: 'bg-slate-100 text-slate-500 border-slate-200',
+      badge: 'bg-[#EEF2F6] text-slate-500 shadow-neu-pressed',
       label: 'Upcoming',
     },
   }[isAllDone ? 'completed' : week.state];
@@ -45,21 +45,21 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
   };
 
   return (
-    <Card className="p-5 transition-all" glow={week.state === 'current' && !isAllDone}>
+    <Card className="p-6 transition-all" glow={week.state === 'current' && !isAllDone}>
       {/* Header */}
       <div
         onClick={() => setIsExpanded(!isExpanded)}
         className="cursor-pointer flex items-start justify-between gap-4"
       >
-        <div className="flex items-start gap-3.5">
+        <div className="flex items-start gap-4">
           {/* Week Number Icon Badge */}
           <div
-            className={`w-10 h-10 rounded-xl flex items-center justify-center font-mono font-bold text-sm shrink-0 border ${
+            className={`w-12 h-12 rounded-2xl flex items-center justify-center font-mono font-black text-sm shrink-0 shadow-neu-sm ${
               isAllDone
-                ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                ? 'bg-emerald-50 text-emerald-700'
                 : week.state === 'current'
-                ? 'bg-orange-50 text-brand-orange border-orange-200'
-                : 'bg-slate-100 text-slate-500 border-slate-200'
+                ? 'bg-orange-50 text-brand-orange'
+                : 'bg-[#EEF2F6] text-slate-500'
             }`}
           >
             W{week.weekNumber}
@@ -67,21 +67,21 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
 
           <div>
             <div className="flex items-center gap-2">
-              <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border font-mono ${stateColors.badge}`}>
+              <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider font-mono ${stateColors.badge}`}>
                 {stateColors.label}
               </span>
-              <span className="text-xs font-semibold text-slate-500 font-mono">
+              <span className="text-xs font-bold text-slate-500 font-mono">
                 {week.estimatedHoursTotal}h allocated
               </span>
-              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] text-emerald-700 font-bold font-mono bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] text-emerald-700 font-bold font-mono bg-emerald-50 px-2.5 py-0.5 rounded-lg shadow-neu-sm">
                 <TrendingUp className="w-3 h-3" />
                 +6% Readiness Boost
               </span>
             </div>
-            <h3 className="text-base font-bold text-slate-900 tracking-tight mt-1 font-sans">
+            <h3 className="text-base font-black text-slate-900 tracking-tight mt-1 font-sans">
               {week.theme}
             </h3>
-            <p className="text-xs text-slate-500 mt-0.5 max-w-2xl font-normal">
+            <p className="text-xs text-slate-500 mt-0.5 max-w-2xl font-medium">
               {week.tagline}
             </p>
           </div>
@@ -93,32 +93,32 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
             <span className="text-xs font-bold text-slate-800 font-mono">
               {completedCount} / {week.tasks.length} Completed
             </span>
-            <div className="w-24 h-1.5 rounded-full bg-slate-100 mt-1.5 overflow-hidden">
+            <div className="w-28 h-2 rounded-full bg-[#EEF2F6] shadow-neu-pressed mt-2 overflow-hidden p-0.5">
               <div
                 className={`h-full rounded-full transition-all duration-300 ${isAllDone ? 'bg-emerald-500' : 'bg-brand-orange'}`}
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
           </div>
-          <button className="p-1 rounded-lg text-slate-400 hover:text-slate-700 transition-colors">
-            {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+          <button className="w-8 h-8 rounded-xl bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat flex items-center justify-center text-slate-400 hover:text-slate-800 transition-all">
+            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
         </div>
       </div>
 
-      {/* Expanded Content: Key Milestone + Task List + Resources */}
+      {/* Expanded Content */}
       {isExpanded && (
-        <div className="mt-5 pt-4 border-t border-slate-100 space-y-5">
+        <div className="mt-6 pt-5 border-t border-[#CAD4E0]/40 space-y-6">
           {/* Key Milestone Callout */}
-          <div className="p-3.5 rounded-xl bg-orange-50/50 border border-orange-100 flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-orange-100 text-brand-orange shrink-0">
+          <div className="p-4 rounded-2xl bg-[#EEF2F6] shadow-neu-pressed flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-[#EEF2F6] shadow-neu-sm text-brand-orange shrink-0">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
               <span className="text-[10px] font-bold uppercase text-slate-400 tracking-wider font-mono">
                 Target Deliverable
               </span>
-              <p className="text-xs font-semibold text-slate-800">
+              <p className="text-xs font-bold text-slate-800 mt-0.5">
                 {week.keyMilestone}
               </p>
             </div>
@@ -126,7 +126,7 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
 
           {/* Tasks Checklist */}
           <div>
-            <div className="flex items-center justify-between mb-2.5">
+            <div className="flex items-center justify-between mb-3">
               <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">
                 Actionable Tasks ({completedCount}/{week.tasks.length})
               </h4>
@@ -135,24 +135,24 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
               </span>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-3">
               {week.tasks.map(task => {
                 const done = isTaskCompleted(task.id, task.completed);
                 return (
                   <div
                     key={task.id}
                     onClick={() => handleTaskCheck(task.id)}
-                    className={`group cursor-pointer p-3.5 rounded-xl border transition-all flex items-start gap-3 ${
+                    className={`group cursor-pointer p-4 rounded-2xl transition-all duration-200 flex items-start gap-3.5 ${
                       done
-                        ? 'bg-emerald-50/50 border-emerald-200'
-                        : 'bg-white border-slate-200 hover:border-brand-orange/30 hover:bg-slate-50/60'
+                        ? 'bg-[#EEF2F6] shadow-neu-pressed'
+                        : 'bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat'
                     }`}
                   >
                     <button className="mt-0.5 shrink-0 text-slate-400 group-hover:text-slate-700 transition-colors">
                       {done ? (
                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                       ) : (
-                        <Circle className="w-4 h-4 text-slate-300 group-hover:text-brand-orange" />
+                        <Circle className="w-4 h-4 text-slate-400 group-hover:text-brand-orange" />
                       )}
                     </button>
 
@@ -174,14 +174,14 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
                         {task.description}
                       </p>
 
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                      <div className="mt-2.5 flex flex-wrap items-center gap-2">
                         <span className="text-[10px] text-slate-400">
-                          Deliverable: <span className="text-slate-600 font-mono font-medium">{task.deliverable}</span>
+                          Deliverable: <span className="text-slate-700 font-mono font-semibold">{task.deliverable}</span>
                         </span>
                         {task.skillsAddressed.map(sk => (
                           <span
                             key={sk}
-                            className="px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 text-slate-600 border border-slate-200"
+                            className="px-2 py-0.5 rounded-lg text-[10px] font-mono font-bold bg-[#EEF2F6] shadow-neu-sm text-slate-600"
                           >
                             Mapped Gap: {sk}
                           </span>
@@ -197,20 +197,20 @@ export const RoadmapWeek: React.FC<RoadmapWeekProps> = ({ week, onToggleTask }) 
           {/* Resources */}
           {week.resources && week.resources.length > 0 && (
             <div>
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5 font-mono">
+              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 font-mono">
                 Curated High-Impact Resources
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {week.resources.map((res, idx) => (
                   <a
                     key={idx}
                     href={res.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-orange/40 hover:bg-orange-50/50 transition-colors flex items-center justify-between group"
+                    className="p-3.5 rounded-2xl bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat transition-all flex items-center justify-between group"
                   >
                     <div>
-                      <span className="text-xs font-semibold text-slate-800 group-hover:text-brand-orange transition-colors line-clamp-1">
+                      <span className="text-xs font-bold text-slate-800 group-hover:text-brand-orange transition-colors line-clamp-1">
                         {res.title}
                       </span>
                       <span className="text-[11px] text-slate-400 font-mono">

@@ -52,21 +52,25 @@ export const StatCard: React.FC<StatCardProps> = ({
   }, [numericValue, isNumeric]);
 
   return (
-    <Card className="p-4 flex flex-col justify-between" glow={highlight}>
+    <Card className="p-5 flex flex-col justify-between" glow={highlight}>
       <div className="flex items-center justify-between gap-2">
         <span className="text-[11px] font-bold text-slate-500 font-mono tracking-wider uppercase truncate">
           {label}
         </span>
         {Icon && (
-          <div className={`p-1.5 rounded-lg border ${highlight ? 'bg-orange-50 text-brand-orange border-orange-200' : 'bg-slate-50 text-slate-400 border-slate-200'}`}>
-            <Icon className="w-3.5 h-3.5" />
+          <div
+            className={`w-8 h-8 rounded-xl flex items-center justify-center shadow-neu-pressed ${
+              highlight ? 'text-brand-orange bg-orange-50/50' : 'text-slate-500 bg-[#EEF2F6]'
+            }`}
+          >
+            <Icon className="w-4 h-4" />
           </div>
         )}
       </div>
 
       <div className="mt-3">
-        <div className="flex items-baseline gap-1">
-          {prefix && <span className="text-sm font-bold text-brand-orange font-mono">{prefix}</span>}
+        <div className="flex items-baseline gap-1.5">
+          {prefix && <span className="text-base font-bold text-brand-orange font-mono">{prefix}</span>}
           <span className="text-2xl sm:text-3xl font-black text-slate-900 font-mono tracking-tight">
             {isNumeric ? (Number.isInteger(numericValue) ? Math.round(displayValue) : displayValue.toFixed(1)) : value}
           </span>
@@ -74,24 +78,24 @@ export const StatCard: React.FC<StatCardProps> = ({
         </div>
 
         {trendDelta !== undefined && (
-          <div className="mt-1.5 flex items-center gap-1.5 text-xs font-mono">
+          <div className="mt-2 flex items-center gap-1.5 text-xs font-mono">
             {trendDelta >= 0 ? (
-              <span className="inline-flex items-center gap-0.5 text-emerald-600 font-bold">
+              <span className="inline-flex items-center gap-0.5 text-emerald-700 font-bold px-1.5 py-0.5 rounded-md shadow-neu-pressed text-[10px]">
                 <TrendingUp className="w-3 h-3" />
                 +{trendDelta}%
               </span>
             ) : (
-              <span className="inline-flex items-center gap-0.5 text-rose-600 font-bold">
+              <span className="inline-flex items-center gap-0.5 text-rose-700 font-bold px-1.5 py-0.5 rounded-md shadow-neu-pressed text-[10px]">
                 <TrendingDown className="w-3 h-3" />
                 {trendDelta}%
               </span>
             )}
-            <span className="text-slate-400 text-[11px]">{trendLabel}</span>
+            <span className="text-slate-500 text-[11px]">{trendLabel}</span>
           </div>
         )}
 
         {subtext && !trendDelta && (
-          <p className="mt-1.5 text-xs text-slate-500 truncate font-medium">{subtext}</p>
+          <p className="mt-2 text-xs text-slate-500 truncate font-medium">{subtext}</p>
         )}
       </div>
     </Card>

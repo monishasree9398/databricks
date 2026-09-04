@@ -21,9 +21,9 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', showTagline = false, cl
   };
 
   return (
-    <div className={`flex items-center gap-2.5 select-none ${className}`}>
-      <div className="relative flex items-center justify-center p-2 rounded-xl bg-orange-50 border border-orange-200">
-        <LockOpen className={`${iconSizes[size]} text-brand-orange stroke-[2.2]`} />
+    <div className={`flex items-center gap-3 select-none ${className}`}>
+      <div className="relative flex items-center justify-center p-2.5 rounded-2xl bg-[#EEF2F6] shadow-neu-sm text-brand-orange">
+        <LockOpen className={`${iconSizes[size]} text-brand-orange stroke-[2.3]`} />
       </div>
       <div className="flex flex-col">
         <div className="flex items-center gap-1.5">
@@ -33,7 +33,7 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', showTagline = false, cl
           <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
         </div>
         {showTagline && (
-          <span className="text-[11px] text-slate-500 font-medium tracking-wide">
+          <span className="text-[11px] text-slate-500 font-bold tracking-wide">
             Student Digital Twin
           </span>
         )}

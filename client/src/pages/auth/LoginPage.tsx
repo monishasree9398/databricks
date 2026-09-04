@@ -8,24 +8,24 @@ import {
   GraduationCap,
   Users,
   ArrowRight,
-  ArrowLeft,
-  ShieldCheck,
   Lock,
   Mail,
   Zap,
+  ShieldCheck,
+  ArrowLeft,
   BadgeCheck,
   Building,
 } from 'lucide-react';
 
 interface LoginPageProps {
-  onBackToLanding?: () => void;
   initialRole?: 'student' | 'faculty';
+  onBackToLanding?: () => void;
 }
 
-export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRole = 'student' }) => {
+export const LoginPage: React.FC<LoginPageProps> = ({ initialRole = 'student', onBackToLanding }) => {
   const { login } = useApp();
   const [selectedRole, setSelectedRole] = useState<'student' | 'faculty'>(initialRole);
-  
+
   // Student state
   const [studentEmail, setStudentEmail] = useState<string>('monisha.sree@stanford.edu');
   const [studentPassword, setStudentPassword] = useState<string>('••••••••••••');
@@ -63,22 +63,22 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
   };
 
   return (
-    <div className="min-h-screen relative flex flex-col justify-center items-center p-4 sm:p-8 overflow-hidden">
-      {/* Background Campus Photo with Soft Light Blur */}
+    <div className="min-h-screen relative flex flex-col justify-center items-center p-4 sm:p-8 overflow-hidden bg-[#EEF2F6]">
+      {/* Background Campus Photo with Soft Blur */}
       <div className="absolute inset-0 z-0">
         <img
           src={assetUrl('/images/campus_hero.jpg')}
           alt="Campus"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center opacity-85"
         />
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-md" />
+        <div className="absolute inset-0 bg-[#EEF2F6]/80 backdrop-blur-md" />
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="relative z-10 w-full max-w-md space-y-5"
+        className="relative z-10 w-full max-w-md space-y-6"
       >
         {/* Top Header */}
         <div className="text-center space-y-2">
@@ -86,7 +86,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
             {onBackToLanding ? (
               <button
                 onClick={onBackToLanding}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 border border-slate-200 text-xs font-bold text-slate-700 hover:text-brand-orange hover:bg-white transition-all shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-[#EEF2F6] shadow-neu-sm text-xs font-bold text-slate-700 hover:text-brand-orange transition-all"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 Back to Home
@@ -95,7 +95,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
             <Logo size="md" />
             <div className="w-20" />
           </div>
-          <p className="text-xs text-slate-600 font-medium">
+          <p className="text-xs text-slate-600 font-bold">
             {selectedRole === 'faculty'
               ? 'Enter your verified Faculty ID to inspect cohort digital twins'
               : 'Sign in to access your student digital twin workspace'}
@@ -103,35 +103,35 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
         </div>
 
         {/* 1-Click Quick Demo Sign In Card */}
-        <Card className="p-4 space-y-3 border-orange-200 bg-white/95 shadow-md">
+        <Card className="p-5 space-y-4" hover={false}>
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-bold text-brand-orange uppercase tracking-wider font-mono flex items-center gap-1.5">
+            <span className="text-[11px] font-black text-brand-orange uppercase tracking-wider font-mono flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5" />
               1-Click Demo Sign In
             </span>
-            <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+            <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full shadow-neu-sm">
               INSTANT
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-2 gap-3.5">
             {/* Student Demo Persona */}
             <button
               type="button"
               onClick={handleQuickStudentLogin}
               disabled={loading}
-              className={`p-3 rounded-xl border text-left transition-all group flex items-center gap-3 shadow-xs ${
+              className={`p-3 rounded-2xl transition-all group flex items-center gap-3 ${
                 selectedRole === 'student'
-                  ? 'bg-orange-50/60 border-brand-orange/40'
-                  : 'bg-slate-50 hover:bg-orange-50/80 border-slate-200 hover:border-brand-orange/40'
+                  ? 'bg-[#EEF2F6] shadow-neu-pressed'
+                  : 'bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat'
               }`}
             >
               <img
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
                 alt="Monisha"
-                className="w-10 h-10 rounded-xl object-cover ring-1 ring-slate-200 shrink-0"
+                className="w-10 h-10 rounded-xl object-cover shadow-neu-sm shrink-0"
               />
-              <div className="min-w-0">
+              <div className="min-w-0 text-left">
                 <span className="text-xs font-bold text-slate-900 block truncate group-hover:text-brand-orange">
                   Monisha Sree
                 </span>
@@ -146,18 +146,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
               type="button"
               onClick={handleQuickFacultyLogin}
               disabled={loading}
-              className={`p-3 rounded-xl border text-left transition-all group flex items-center gap-3 shadow-xs ${
+              className={`p-3 rounded-2xl transition-all group flex items-center gap-3 ${
                 selectedRole === 'faculty'
-                  ? 'bg-orange-50/60 border-brand-orange/40'
-                  : 'bg-slate-50 hover:bg-orange-50/80 border-slate-200 hover:border-brand-orange/40'
+                  ? 'bg-[#EEF2F6] shadow-neu-pressed'
+                  : 'bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat'
               }`}
             >
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
                 alt="Faculty"
-                className="w-10 h-10 rounded-xl object-cover ring-1 ring-slate-200 shrink-0"
+                className="w-10 h-10 rounded-xl object-cover shadow-neu-sm shrink-0"
               />
-              <div className="min-w-0">
+              <div className="min-w-0 text-left">
                 <span className="text-xs font-bold text-slate-900 block truncate group-hover:text-brand-orange">
                   Prof. Patterson
                 </span>
@@ -170,15 +170,15 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
         </Card>
 
         {/* Regular Login Card */}
-        <Card className="p-6 space-y-4 bg-white/95 shadow-lg">
+        <Card className="p-7 space-y-5" hover={false}>
           {/* Role Tabs */}
-          <div className="grid grid-cols-2 p-1 rounded-xl bg-slate-100 border border-slate-200">
+          <div className="grid grid-cols-2 p-1.5 rounded-2xl bg-[#EEF2F6] shadow-neu-pressed">
             <button
               type="button"
               onClick={() => setSelectedRole('student')}
-              className={`py-2 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 ${
+              className={`py-2 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 ${
                 selectedRole === 'student'
-                  ? 'bg-white text-brand-orange font-bold shadow-sm'
+                  ? 'bg-[#EEF2F6] text-brand-orange shadow-neu-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -188,9 +188,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
             <button
               type="button"
               onClick={() => setSelectedRole('faculty')}
-              className={`py-2 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 ${
+              className={`py-2 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 ${
                 selectedRole === 'faculty'
-                  ? 'bg-white text-brand-orange font-bold shadow-sm'
+                  ? 'bg-[#EEF2F6] text-brand-orange shadow-neu-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -200,11 +200,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-3.5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {selectedRole === 'faculty' ? (
               /* FACULTY ID LOGIN FORM */
               <>
-                <div className="space-y-1">
+                <div className="space-y-1.5">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono flex items-center justify-between">
                     <span>Faculty Registration ID</span>
                     <span className="text-brand-orange font-bold">REQUIRED</span>
@@ -217,7 +217,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
                       onChange={e => setFacultyId(e.target.value)}
                       placeholder="e.g. FAC-CS-40182"
                       required
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-900 font-mono focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
+                      className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-900 font-mono focus:outline-none transition-all"
                     />
                   </div>
                   <p className="text-[10px] text-slate-400 font-mono">
@@ -225,7 +225,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
                   </p>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-1.5">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono block">
                     Academic Department
                   </label>
@@ -234,19 +234,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
                     <select
                       value={facultyDepartment}
                       onChange={e => setFacultyDepartment(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs font-semibold text-slate-800 focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
+                      className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-800 focus:outline-none transition-all"
                     >
                       <option value="Computer Science & Engineering">Computer Science & Engineering</option>
                       <option value="AI & Machine Learning Institute">AI & Machine Learning Institute</option>
-                      <option value="Electrical Engineering">Electrical Engineering</option>
-                      <option value="Data Science & Informatics">Data Science & Informatics</option>
+                      <option value="Information & Data Systems">Information & Data Systems</option>
                     </select>
                   </div>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-1.5">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono block">
-                    Faculty Security PIN / Passcode
+                    Faculty Passcode
                   </label>
                   <div className="relative">
                     <Lock className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -254,9 +253,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
                       type="password"
                       value={facultyPin}
                       onChange={e => setFacultyPin(e.target.value)}
-                      placeholder="Enter 6-8 digit faculty PIN"
                       required
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
+                      className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-900 focus:outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -264,34 +262,37 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
             ) : (
               /* STUDENT LOGIN FORM */
               <>
-                <div className="space-y-1">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono block">
-                    Student Email / Roll No
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono block">
+                    Institutional Email
                   </label>
                   <div className="relative">
-                    <Mail className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="email"
                       value={studentEmail}
                       onChange={e => setStudentEmail(e.target.value)}
                       required
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
+                      placeholder="you@stanford.edu"
+                      className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-900 focus:outline-none transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 font-mono block">
-                    Password
-                  </label>
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-slate-600 font-mono">
+                      Password
+                    </label>
+                  </div>
                   <div className="relative">
-                    <Lock className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="password"
                       value={studentPassword}
                       onChange={e => setStudentPassword(e.target.value)}
                       required
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs font-medium text-slate-900 focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
+                      className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-900 focus:outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -301,25 +302,19 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToLanding, initialRo
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 rounded-xl bg-brand-orange hover:bg-brand-orangeHover text-white font-bold text-xs transition-all shadow-sm flex items-center justify-center gap-2 mt-2"
+              className="w-full mt-2 inline-flex items-center justify-center gap-2 py-3 rounded-2xl bg-brand-orange text-white font-black text-xs shadow-neu-orange transition-all duration-150 disabled:opacity-50"
             >
-              {loading ? (
-                <span>Authenticating {selectedRole === 'faculty' ? 'Faculty ID' : 'Student'}...</span>
-              ) : (
-                <>
-                  <span>{selectedRole === 'faculty' ? 'Verify Faculty ID & Access Cohort' : 'Enter Workspace'}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </>
-              )}
+              <span>{loading ? 'Authenticating...' : selectedRole === 'faculty' ? 'Access Faculty Portal' : 'Sign In to Workspace'}</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </form>
-        </Card>
 
-        {/* Security Note */}
-        <div className="text-center text-[11px] text-slate-500 flex items-center justify-center gap-2 font-medium">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-          <span>Stanford CS Verified Telemetry</span>
-        </div>
+          {/* Privacy Note */}
+          <div className="pt-2 flex items-center justify-center gap-1.5 text-[11px] text-slate-500 font-bold">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Stanford Single Sign-On (SSO) Protected</span>
+          </div>
+        </Card>
       </motion.div>
     </div>
   );
