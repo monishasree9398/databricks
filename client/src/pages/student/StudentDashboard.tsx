@@ -5,7 +5,8 @@ import { useStudentDashboard } from '../../api/client.js';
 import { useApp } from '../../context/AppContext.js';
 import { StatCard } from '../../components/common/StatCard.js';
 import { ReadinessGauge } from '../../components/common/ReadinessGauge.js';
-import { SkillBar } from '../../components/common/SkillBar.js';
+import { SkillRadarChart } from '../../components/visuals/SkillRadarChart.js';
+import { ReadinessTrajectoryChart } from '../../components/visuals/ReadinessTrajectoryChart.js';
 import { NextMoveCard } from '../../components/student/NextMoveCard.js';
 import { InternshipCard } from '../../components/student/InternshipCard.js';
 import { Card } from '../../components/common/Card.js';
@@ -97,7 +98,7 @@ export const StudentDashboard: React.FC = () => {
               {student.name}
             </h1>
 
-            <p className="text-xs sm:text-sm text-brand-orange font-bold">
+            <p className="text-xs sm:text-sm text-brand-orange font-bold font-mono">
               Target: {student.targetRole}
             </p>
           </div>
@@ -147,16 +148,16 @@ export const StudentDashboard: React.FC = () => {
         />
       </motion.div>
 
-      {/* 3. READINESS GAUGE & COMPETENCIES */}
+      {/* 3. 50/50 VISUAL TELEMETRY COCKPIT (GAUGE + RADAR + TRAJECTORY) */}
       <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Circular Gauge Card */}
-        <Card className="lg:col-span-5 p-6 md:p-8 flex flex-col items-center justify-center">
-          <div className="w-full flex items-center justify-between mb-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
-              Readiness Diagnosis
+        {/* Left (4 Cols): Circular Readiness Gauge */}
+        <Card className="lg:col-span-4 p-6 flex flex-col items-center justify-between">
+          <div className="w-full flex items-center justify-between mb-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono">
+              Live Readiness Dial
             </span>
-            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-slate-600 font-mono">
-              CALIBRATED
+            <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-emerald-700 font-mono">
+              SYNCED
             </span>
           </div>
 
@@ -164,57 +165,65 @@ export const StudentDashboard: React.FC = () => {
             score={dynamicScore}
             tier={dynamicTier}
             reassurance={readinessReassurance}
-            size="lg"
-            className="my-2"
+            size="md"
+            className="my-1"
           />
 
-          <div className="mt-5 w-full pt-4 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
-            <span className="text-slate-500 font-mono">Hiring Bar: <strong className="text-slate-900 font-bold">80% Ready</strong></span>
+          <div className="mt-3 w-full pt-3 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
+            <span className="text-slate-500 font-mono text-[11px]">Bar: <strong className="text-slate-900 font-bold">80% Ready</strong></span>
             <button
               onClick={() => navigate('/skill-gap')}
-              className="text-brand-orange font-bold hover:underline inline-flex items-center gap-1"
+              className="text-brand-orange font-bold hover:underline inline-flex items-center gap-1 text-[11px] font-mono"
             >
-              Analyze Gaps <ArrowRight className="w-3.5 h-3.5" />
+              Analyze Gaps <ArrowRight className="w-3 h-3" />
             </button>
           </div>
         </Card>
 
-        {/* Competencies Progress Card */}
-        <Card className="lg:col-span-7 p-6 md:p-8 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between mb-5">
-              <div>
-                <h3 className="text-base font-black text-slate-900 tracking-tight">
-                  Verified Technical Competencies
-                </h3>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  Verified signals
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
-                  {skillsSummary.strongCount} Strong
-                </span>
-                <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
-                  {skillsSummary.improveCount} Improve
-                </span>
-              </div>
-            </div>
-
-            <div className="space-y-4 my-2">
-              {skillsSummary.topSkills.slice(0, 4).map(sk => (
-                <SkillBar key={sk.id} skill={sk} showDetails={false} />
-              ))}
-            </div>
+        {/* Center (4 Cols): Skill Radar Geometry */}
+        <Card className="lg:col-span-4 p-6 flex flex-col justify-between">
+          <div className="w-full flex items-center justify-between mb-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono">
+              Competency Spider Radar
+            </span>
+            <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-brand-orange font-mono">
+              6 VECTORS
+            </span>
           </div>
 
-          <div className="mt-5 pt-4 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
-            <span className="text-slate-400 font-mono">6 projects</span>
+          <SkillRadarChart skills={skillsSummary.topSkills} targetThreshold={80} />
+
+          <div className="mt-2 w-full pt-3 border-t border-[#CAD4E0]/40 flex items-center justify-between text-[11px] font-mono">
+            <span className="text-slate-500">Benchmark: 80%</span>
             <button
               onClick={() => navigate('/profile')}
-              className="text-slate-700 hover:text-brand-orange font-bold transition-colors inline-flex items-center gap-1"
+              className="text-slate-700 hover:text-brand-orange font-bold inline-flex items-center gap-1"
             >
-              Full Profile <ArrowRight className="w-3.5 h-3.5" />
+              All Skills <ArrowRight className="w-3 h-3" />
+            </button>
+          </div>
+        </Card>
+
+        {/* Right (4 Cols): Readiness Velocity Trajectory */}
+        <Card className="lg:col-span-4 p-6 flex flex-col justify-between">
+          <div className="w-full flex items-center justify-between mb-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono">
+              Sprint Progression Curve
+            </span>
+            <span className="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] shadow-neu-sm text-emerald-700 font-mono">
+              +14% / MO
+            </span>
+          </div>
+
+          <ReadinessTrajectoryChart currentScore={dynamicScore} />
+
+          <div className="mt-2 w-full pt-3 border-t border-[#CAD4E0]/40 flex items-center justify-between text-[11px] font-mono">
+            <span className="text-slate-500">Projected: W6 (94%)</span>
+            <button
+              onClick={() => navigate('/roadmap')}
+              className="text-brand-orange font-bold hover:underline inline-flex items-center gap-1"
+            >
+              Roadmap <ArrowRight className="w-3 h-3" />
             </button>
           </div>
         </Card>
@@ -233,7 +242,7 @@ export const StudentDashboard: React.FC = () => {
       <motion.div variants={itemVariants}>
         <Card className="p-6 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-            {/* Left: 3D Data Architecture Graphic */}
+            {/* Left: Visual Project Thumbnail */}
             <div className="md:col-span-5 rounded-2xl overflow-hidden shadow-neu-sm relative group">
               <img
                 src={assetUrl('/images/unlock_project.jpg')}
@@ -256,14 +265,14 @@ export const StudentDashboard: React.FC = () => {
                 <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
                   CAPSTONE REPO
                 </span>
-                <span className="text-xs font-mono text-slate-400">CS Capstone</span>
+                <span className="text-xs font-mono text-slate-400 font-bold">CS Capstone</span>
               </div>
 
               <h3 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
                 High-Throughput Distributed LLM Serving Engine
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                 CUDA kernels with continuous batching & PagedAttention (3.4x throughput).
               </p>
 
@@ -290,13 +299,13 @@ export const StudentDashboard: React.FC = () => {
             <h3 className="text-lg font-black text-slate-900 tracking-tight">
               Top Matched Internships
             </h3>
-            <p className="text-xs text-slate-500 mt-0.5">
-              Ranked by match readiness
+            <p className="text-xs text-slate-500 font-mono mt-0.5">
+              Ranked by verified match readiness
             </p>
           </div>
           <button
             onClick={() => navigate('/internships')}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-orangeHover transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-orangeHover transition-colors font-mono"
           >
             <span>View All (8)</span>
             <ArrowRight className="w-3.5 h-3.5" />

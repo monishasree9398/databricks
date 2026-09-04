@@ -4,11 +4,14 @@ import { useStudentProfile } from '../../api/client.js';
 import { Card } from '../../components/common/Card.js';
 import { SkillBar } from '../../components/common/SkillBar.js';
 import { ReadinessGauge } from '../../components/common/ReadinessGauge.js';
+import { SkillRadarChart } from '../../components/visuals/SkillRadarChart.js';
 import { DashboardSkeleton } from '../../components/common/LoadingSkeleton.js';
 import { assetUrl } from '../../utils/assets.js';
 import {
   Award,
   Trophy,
+  Activity,
+  Layers,
 } from 'lucide-react';
 
 export const StudentProfile: React.FC = () => {
@@ -24,6 +27,11 @@ export const StudentProfile: React.FC = () => {
   }
 
   const { academic, skills, projects, certifications, hackathons } = student;
+
+  const radarSkills = skills.map(s => ({
+    name: s.name,
+    level: s.level,
+  }));
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7">
@@ -109,50 +117,59 @@ export const StudentProfile: React.FC = () => {
         </Card>
       </div>
 
-      {/* Two Columns: Skills & Projects */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left: Verified Skills Matrix */}
-        <Card className="lg:col-span-5 p-6 md:p-7 space-y-5">
-          <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40">
-            <div>
-              <h3 className="text-base font-black text-slate-900 font-sans">
-                Verified Skills Matrix
-              </h3>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Code reviews & benchmarks
-              </p>
+      {/* 50/50 VISUAL MATRIX & KEY ARTIFACTS */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        {/* Left: Verified Skills Matrix + Spider Radar (5 Cols) */}
+        <Card className="lg:col-span-5 p-6 md:p-7 space-y-5 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40">
+              <div className="flex items-center gap-2">
+                <Activity className="w-4 h-4 text-brand-orange" />
+                <h3 className="text-base font-black text-slate-900 font-sans">
+                  Competency Vectors
+                </h3>
+              </div>
+              <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
+                VERIFIED
+              </span>
             </div>
-            <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
-              VERIFIED
-            </span>
+
+            {/* Visual Radar Polygon */}
+            <div className="my-3">
+              <SkillRadarChart skills={radarSkills} targetThreshold={80} />
+            </div>
+
+            {/* Linear Skill Bars */}
+            <div className="space-y-3.5 pt-2">
+              {skills.slice(0, 4).map(skill => (
+                <SkillBar key={skill.id} skill={skill} showDetails />
+              ))}
+            </div>
           </div>
 
-          <div className="space-y-4">
-            {skills.map(skill => (
-              <SkillBar key={skill.id} skill={skill} showDetails />
-            ))}
+          <div className="pt-3 border-t border-[#CAD4E0]/40 text-[11px] font-mono text-slate-400 text-center">
+            Calibrated against industry benchmark (80%)
           </div>
         </Card>
 
-        {/* Right: Key Project Portfolio & Certs */}
+        {/* Right: Key Project Portfolio & Certs (7 Cols) */}
         <div className="lg:col-span-7 space-y-6">
           <Card className="p-6 md:p-7 space-y-5">
             <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40">
-              <div>
+              <div className="flex items-center gap-2">
+                <Layers className="w-4 h-4 text-brand-orange" />
                 <h3 className="text-base font-black text-slate-900 font-sans">
-                  Digital Twin Key Artifacts & Repos
+                  Key Artifacts & Repos
                 </h3>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  Verified project repositories
-                </p>
               </div>
+              <span className="text-xs text-slate-500 font-mono font-bold">2 Repositories</span>
             </div>
 
             <div className="space-y-4">
               {projects.map((proj, idx) => (
                 <div
                   key={proj.id}
-                  className="p-5 rounded-3xl bg-[#EEF2F6] shadow-neu-sm space-y-3.5 hover:shadow-neu-flat transition-all"
+                  className="p-5 rounded-3xl bg-[#EEF2F6] shadow-neu-sm space-y-3 hover:shadow-neu-flat transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -178,8 +195,8 @@ export const StudentProfile: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="p-3 rounded-2xl bg-[#EEF2F6] shadow-neu-pressed text-xs text-slate-700">
-                    <strong className="text-brand-orange text-[11px] uppercase tracking-wide mr-1.5 font-mono font-bold">Impact:</strong>
+                  <div className="p-3 rounded-2xl bg-[#EEF2F6] shadow-neu-pressed text-xs text-slate-700 font-mono">
+                    <strong className="text-brand-orange text-[11px] uppercase tracking-wide mr-1.5 font-bold">Impact:</strong>
                     {proj.metrics}
                   </div>
 
@@ -209,7 +226,7 @@ export const StudentProfile: React.FC = () => {
               </div>
               <div className="space-y-2.5">
                 {certifications.map(c => (
-                  <div key={c.name} className="text-xs space-y-0.5 p-2 rounded-xl bg-[#EEF2F6] shadow-neu-sm">
+                  <div key={c.name} className="text-xs space-y-0.5 p-2.5 rounded-xl bg-[#EEF2F6] shadow-neu-sm">
                     <p className="font-bold text-slate-800">{c.name}</p>
                     <p className="text-[11px] text-slate-500 font-mono">{c.issuer} • {c.issueDate}</p>
                   </div>
@@ -226,7 +243,7 @@ export const StudentProfile: React.FC = () => {
               </div>
               <div className="space-y-2.5">
                 {hackathons.map(h => (
-                  <div key={h.name} className="text-xs space-y-0.5 p-2 rounded-xl bg-[#EEF2F6] shadow-neu-sm">
+                  <div key={h.name} className="text-xs space-y-0.5 p-2.5 rounded-xl bg-[#EEF2F6] shadow-neu-sm">
                     <p className="font-bold text-slate-800">{h.name}</p>
                     <p className="text-[11px] text-brand-orange font-bold font-mono">{h.position} • {h.date}</p>
                   </div>

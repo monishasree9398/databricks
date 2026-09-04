@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext.js';
 import { useStudentRoadmap } from '../../api/client.js';
 import { RoadmapWeek } from '../../components/student/RoadmapWeek.js';
+import { VisualRoadmapPipeline } from '../../components/visuals/VisualRoadmapPipeline.js';
 import { Card } from '../../components/common/Card.js';
 import { DashboardSkeleton } from '../../components/common/LoadingSkeleton.js';
 import { CheckCircle2, Clock, Zap } from 'lucide-react';
@@ -9,6 +10,7 @@ import { CheckCircle2, Clock, Zap } from 'lucide-react';
 export const RoadmapView: React.FC = () => {
   const { activeStudentId, completedTasks, getDynamicReadinessScore } = useApp();
   const { data: roadmap, isLoading } = useStudentRoadmap(activeStudentId);
+  const [selectedWeek, setSelectedWeek] = useState<number | null>(null);
 
   if (isLoading || !roadmap) {
     return (
@@ -28,6 +30,10 @@ export const RoadmapView: React.FC = () => {
   const completedTasksCount = allTasks.filter(t => isTaskCompleted(t.id, t.completed)).length;
   const overallPercentage = totalTasks > 0 ? Math.round((completedTasksCount / totalTasks) * 100) : 0;
   const dynamicScore = getDynamicReadinessScore(78);
+
+  const displayedWeeks = selectedWeek
+    ? roadmap.weeks.filter(w => w.weekNumber === selectedWeek)
+    : roadmap.weeks;
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7">
@@ -55,19 +61,25 @@ export const RoadmapView: React.FC = () => {
         </div>
       </div>
 
-      {/* Progress Overview Bar */}
+      {/* 1. VISUAL 4-STAGE INTERACTIVE PIPELINE */}
+      <VisualRoadmapPipeline
+        activeWeek={selectedWeek || 2}
+        onSelectWeek={(w) => setSelectedWeek(prev => prev === w ? null : w)}
+      />
+
+      {/* 2. OVERALL PROGRESS BAR */}
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-black text-slate-900">Overall Sprint Progress</span>
+            <span className="text-sm font-black text-slate-900">Overall Sprint Velocity</span>
             <span className="text-xs font-mono text-brand-orange font-bold">
-              {overallPercentage}%
+              {overallPercentage}% Completed
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs font-mono text-slate-500">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              {completedTasksCount}/{totalTasks} Tasks Completed
+              {completedTasksCount}/{totalTasks} Tasks
             </span>
             <span className="flex items-center gap-1.5 font-bold text-brand-orange">
               <Clock className="w-3.5 h-3.5" />
@@ -85,9 +97,9 @@ export const RoadmapView: React.FC = () => {
         </div>
       </Card>
 
-      {/* 4-Week Sprint Cards */}
+      {/* 3. 4-WEEK SPRINT CHECKLIST CARDS */}
       <div className="space-y-5">
-        {roadmap.weeks.map(week => (
+        {displayedWeeks.map(week => (
           <RoadmapWeek key={week.weekNumber} week={week} />
         ))}
       </div>

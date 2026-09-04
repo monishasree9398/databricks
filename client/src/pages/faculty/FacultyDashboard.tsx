@@ -4,6 +4,7 @@ import { useFacultyDashboard } from '../../api/client.js';
 import { Card } from '../../components/common/Card.js';
 import { StatCard } from '../../components/common/StatCard.js';
 import { ClassDistributionChart } from '../../components/faculty/ClassDistributionChart.js';
+import { CohortDeficitChart } from '../../components/visuals/CohortDeficitChart.js';
 import { SkillGapMatrix } from '../../components/faculty/SkillGapMatrix.js';
 import { TrainingPlanModal } from '../../components/faculty/TrainingPlanModal.js';
 import { DashboardSkeleton } from '../../components/common/LoadingSkeleton.js';
@@ -13,6 +14,8 @@ import {
   AlertCircle,
   Sparkles,
   ArrowRight,
+  BarChart2,
+  PieChart,
 } from 'lucide-react';
 
 export const FacultyDashboard: React.FC = () => {
@@ -67,7 +70,7 @@ export const FacultyDashboard: React.FC = () => {
           className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-orange text-white font-black text-xs shadow-neu-orange transition-all self-start sm:self-auto"
         >
           <Sparkles className="w-4 h-4" />
-          <span>Generate Plan</span>
+          <span>Generate 3-Week Plan</span>
         </button>
       </div>
 
@@ -90,14 +93,14 @@ export const FacultyDashboard: React.FC = () => {
           trendLabel="vs last week"
         />
         <StatCard
-          label="Ready For Placement"
+          label="Placement Ready"
           value={readinessDistribution.ready}
           suffix={`(${readinessDistribution.readyPercentage}%)`}
           icon={Users}
           subtext="Above 80% readiness bar"
         />
         <StatCard
-          label="Top Cohort Blocker"
+          label="Primary Bottleneck"
           value="CUDA"
           suffix="Kernels"
           icon={AlertCircle}
@@ -105,11 +108,45 @@ export const FacultyDashboard: React.FC = () => {
         />
       </div>
 
-      {/* Cohort Readiness Distribution Chart */}
-      <ClassDistributionChart
-        distribution={readinessDistribution}
-        totalHeadcount={totalHeadcount}
-      />
+      {/* 50/50 VISUAL TELEMETRY ROW: DISTRIBUTION + COHORT DEFICIT BAR */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        {/* Left: Readiness Distribution Gauge (6 Cols) */}
+        <div className="lg:col-span-6">
+          <ClassDistributionChart
+            distribution={readinessDistribution}
+            totalHeadcount={totalHeadcount}
+          />
+        </div>
+
+        {/* Right: Class Proficiency vs Industry Benchmark (6 Cols) */}
+        <Card className="lg:col-span-6 p-6 md:p-7 flex flex-col justify-between">
+          <div className="flex items-center justify-between pb-2 border-b border-[#CAD4E0]/40">
+            <div className="flex items-center gap-2">
+              <BarChart2 className="w-4 h-4 text-brand-orange" />
+              <h3 className="text-sm font-black text-slate-900 font-mono uppercase">
+                Skill Deficit Telemetry
+              </h3>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
+              TOP 5 DEFICITS
+            </span>
+          </div>
+
+          <div className="my-2">
+            <CohortDeficitChart />
+          </div>
+
+          <div className="pt-3 border-t border-[#CAD4E0]/40 flex items-center justify-between text-[11px] font-mono text-slate-500">
+            <span>64 students need CUDA intervention</span>
+            <button
+              onClick={() => setIsPlanModalOpen(true)}
+              className="text-brand-orange font-bold hover:underline"
+            >
+              Fix Gaps →
+            </button>
+          </div>
+        </Card>
+      </div>
 
       {/* AI Cohort Diagnosis Card */}
       <Card className="p-6 md:p-7" glow>
@@ -127,7 +164,7 @@ export const FacultyDashboard: React.FC = () => {
             onClick={() => setIsPlanModalOpen(true)}
             className="text-xs font-bold text-brand-orange hover:underline font-mono inline-flex items-center gap-1"
           >
-            Deploy 3-Week Lab <ArrowRight className="w-3.5 h-3.5" />
+            Deploy Lab <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
@@ -158,13 +195,13 @@ export const FacultyDashboard: React.FC = () => {
             <h3 className="text-base font-black text-slate-900 tracking-tight font-sans">
               Top Target Hiring Roles
             </h3>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-slate-500 font-mono mt-0.5">
               Active hiring market demand
             </p>
           </div>
           <button
             onClick={() => navigate('/faculty/students')}
-            className="text-xs font-bold text-brand-orange hover:underline inline-flex items-center gap-1"
+            className="text-xs font-bold text-brand-orange hover:underline inline-flex items-center gap-1 font-mono"
           >
             Inspect Students <ArrowRight className="w-3.5 h-3.5" />
           </button>
@@ -185,7 +222,7 @@ export const FacultyDashboard: React.FC = () => {
                 </span>
               </div>
               <div className="flex items-baseline justify-between text-xs font-mono">
-                <span className="text-slate-500 font-medium">Student Match Rate</span>
+                <span className="text-slate-500 font-medium">Match Rate</span>
                 <span className="font-black text-slate-900">{role.studentMatchRate}%</span>
               </div>
               <div className="w-full h-2 rounded-full bg-[#EEF2F6] shadow-neu-pressed p-0.5 overflow-hidden">
