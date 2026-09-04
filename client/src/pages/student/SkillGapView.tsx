@@ -42,10 +42,10 @@ export const SkillGapView: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-[#EEF2F6] text-brand-orange shadow-neu-sm font-mono">
-              GAP DIAGNOSTICS
+              DIAGNOSTICS
             </span>
             <span className="text-xs text-slate-500 font-mono font-bold">
-              Target Bar: 90%+
+              Target: 90%+
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
@@ -76,10 +76,10 @@ export const SkillGapView: React.FC = () => {
         <Card className="p-6">
           <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-800 mb-2 font-mono">
             <AlertTriangle className="w-4 h-4 text-amber-600" />
-            Single Biggest Blocker
+            Top Blocker
           </div>
           <h3 className="text-xl font-black text-slate-900 font-sans tracking-tight">
-            {analysis.biggestBlocker.skill} (-{analysis.biggestBlocker.gapDelta}%)
+            {analysis.biggestBlocker.skill}{analysis.biggestBlocker.gapDelta ? ` (-${analysis.biggestBlocker.gapDelta}%)` : ''}
           </h3>
           <p className="text-xs text-slate-600 mt-1 leading-relaxed">
             {analysis.biggestBlocker.reason}
@@ -88,7 +88,7 @@ export const SkillGapView: React.FC = () => {
             <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-lg shadow-neu-sm">
               {analysis.biggestBlocker.impactOnReadiness}
             </span>
-            <span className="text-[11px] font-mono text-slate-400 font-medium">Critical Priority</span>
+            <span className="text-[11px] font-mono text-slate-400 font-medium">Critical</span>
           </div>
         </Card>
 
@@ -96,7 +96,7 @@ export const SkillGapView: React.FC = () => {
         <Card className="p-6" glow>
           <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-orange mb-2 font-mono">
             <Zap className="w-4 h-4" />
-            Recommended Next Step
+            Next Action
           </div>
           <h3 className="text-xl font-black text-slate-900 font-sans tracking-tight">
             {analysis.recommendedNextStep.title}
@@ -113,7 +113,7 @@ export const SkillGapView: React.FC = () => {
               onClick={() => navigate('/roadmap')}
               className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#EEF2F6] shadow-neu-sm hover:shadow-neu-flat text-brand-orange transition-all font-mono"
             >
-              <span>Open Week {analysis.recommendedNextStep.roadmapWeekTarget} Roadmap</span>
+              <span>Week {analysis.recommendedNextStep.roadmapWeekTarget} Roadmap</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

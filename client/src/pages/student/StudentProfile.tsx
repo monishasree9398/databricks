@@ -119,7 +119,7 @@ export const StudentProfile: React.FC = () => {
                 Verified Skills Matrix
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                Evaluated through code reviews & lab performance
+                Code reviews & benchmarks
               </p>
             </div>
             <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
@@ -143,7 +143,7 @@ export const StudentProfile: React.FC = () => {
                   Digital Twin Key Artifacts & Repos
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  High-impact production projects mapped to hiring benchmarks
+                  Verified project repositories
                 </p>
               </div>
             </div>

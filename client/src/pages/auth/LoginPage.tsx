@@ -97,8 +97,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialRole = 'student', o
           </div>
           <p className="text-xs text-slate-600 font-bold">
             {selectedRole === 'faculty'
-              ? 'Enter your verified Faculty ID to inspect cohort digital twins'
-              : 'Sign in to access your student digital twin workspace'}
+              ? 'Sign in with your Faculty ID'
+              : 'Sign in to your Student Digital Twin'}
           </p>
         </div>
 
@@ -220,9 +220,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialRole = 'student', o
                       className="w-full bg-[#EEF2F6] shadow-neu-pressed rounded-xl pl-9 pr-3 py-2.5 text-xs font-bold text-slate-900 font-mono focus:outline-none transition-all"
                     />
                   </div>
-                  <p className="text-[10px] text-slate-400 font-mono">
-                    Assigned by Stanford Academic Computing Department
-                  </p>
                 </div>
 
                 <div className="space-y-1.5">

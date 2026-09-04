@@ -188,7 +188,7 @@ export const StudentDashboard: React.FC = () => {
                   Verified Technical Competencies
                 </h3>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Coursework, repo commits, and benchmarks
+                  Verified signals
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -209,7 +209,7 @@ export const StudentDashboard: React.FC = () => {
           </div>
 
           <div className="mt-5 pt-4 border-t border-[#CAD4E0]/40 flex items-center justify-between text-xs">
-            <span className="text-slate-400 font-mono">6 verified projects</span>
+            <span className="text-slate-400 font-mono">6 projects</span>
             <button
               onClick={() => navigate('/profile')}
               className="text-slate-700 hover:text-brand-orange font-bold transition-colors inline-flex items-center gap-1"
@@ -254,7 +254,7 @@ export const StudentDashboard: React.FC = () => {
             <div className="md:col-span-7 space-y-3">
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
-                  VERIFIED REPO EVALUATION
+                  CAPSTONE REPO
                 </span>
                 <span className="text-xs font-mono text-slate-400">CS Capstone</span>
               </div>
@@ -264,7 +264,7 @@ export const StudentDashboard: React.FC = () => {
               </h3>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Custom CUDA kernels with continuous batching and PagedAttention, achieving 3.4x higher token throughput.
+                CUDA kernels with continuous batching & PagedAttention (3.4x throughput).
               </p>
 
               {/* Tech Stack Pills */}
@@ -291,14 +291,14 @@ export const StudentDashboard: React.FC = () => {
               Top Matched Internships
             </h3>
             <p className="text-xs text-slate-500 mt-0.5">
-              Ranked by digital twin readiness alignment for Tier 1 teams
+              Ranked by match readiness
             </p>
           </div>
           <button
             onClick={() => navigate('/internships')}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-orangeHover transition-colors"
           >
-            <span>Explore All 8 Roles</span>
+            <span>View All (8)</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>

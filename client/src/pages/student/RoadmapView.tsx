@@ -39,11 +39,11 @@ export const RoadmapView: React.FC = () => {
               CAREER SPRINT
             </span>
             <span className="text-xs text-slate-500 font-mono font-bold">
-              Closing Gaps for Tier-1 Readiness
+              Tier-1 Readiness Sprint
             </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
-            Personalized Career Roadmap
+            Career Roadmap
           </h1>
         </div>
 

@@ -76,8 +76,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           </div>
 
           {/* Core Tagline Plate */}
-          <p className="text-base sm:text-xl text-slate-700 font-bold max-w-2xl leading-relaxed bg-[#EEF2F6]/90 p-5 rounded-3xl shadow-neu-flat">
-            Not scattered data. A living digital twin that converts coursework, repositories, and skills into verified internship readiness.
+          <p className="text-sm sm:text-base text-slate-700 font-bold max-w-lg leading-relaxed bg-[#EEF2F6]/90 px-6 py-3 rounded-2xl shadow-neu-flat">
+            AI-powered digital twin for verified student placement readiness.
           </p>
 
           {/* Action Buttons */}

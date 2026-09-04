@@ -58,7 +58,7 @@ export const FacultyDashboard: React.FC = () => {
             {className}
           </h1>
           <p className="text-xs text-slate-500 font-mono font-bold mt-0.5">
-            {totalHeadcount} Student Digital Twins • Stanford CS Department
+            {totalHeadcount} Students • Stanford CS
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export const FacultyDashboard: React.FC = () => {
           className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-orange text-white font-black text-xs shadow-neu-orange transition-all self-start sm:self-auto"
         >
           <Sparkles className="w-4 h-4" />
-          <span>Generate Cohort Plan</span>
+          <span>Generate Plan</span>
         </button>
       </div>
 
@@ -159,7 +159,7 @@ export const FacultyDashboard: React.FC = () => {
               Top Target Hiring Roles
             </h3>
             <p className="text-xs text-slate-500 mt-0.5">
-              Market demand mapping based on student goals and industry postings
+              Active hiring market demand
             </p>
           </div>
           <button

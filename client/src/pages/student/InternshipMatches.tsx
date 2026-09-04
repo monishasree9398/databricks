@@ -53,7 +53,7 @@ export const InternshipMatches: React.FC = () => {
             Internship Matches
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl font-medium">
-            Calculated by cross-referencing your digital twin telemetry against active production engineering requirements.
+            Matched against active industry hiring requirements.
           </p>
         </div>
       </div>
