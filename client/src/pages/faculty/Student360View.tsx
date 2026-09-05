@@ -5,10 +5,14 @@ import { useApp } from '../../context/AppContext.js';
 import { Card } from '../../components/common/Card.js';
 import { SkillBar } from '../../components/common/SkillBar.js';
 import { ReadinessGauge } from '../../components/common/ReadinessGauge.js';
+import { SkillRadarChart } from '../../components/visuals/SkillRadarChart.js';
+import { ReadinessTrajectoryChart } from '../../components/visuals/ReadinessTrajectoryChart.js';
 import { DashboardSkeleton } from '../../components/common/LoadingSkeleton.js';
 import {
   Sparkles,
   ArrowLeft,
+  Activity,
+  TrendingUp,
 } from 'lucide-react';
 
 export const Student360View: React.FC = () => {
@@ -28,6 +32,11 @@ export const Student360View: React.FC = () => {
   }
 
   const { student, aiDiagnostic, facultyAdvisorNotes, matches } = student360;
+
+  const radarSkills = student.skills.map(s => ({
+    name: s.name,
+    level: s.level,
+  }));
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-7">
@@ -63,7 +72,7 @@ export const Student360View: React.FC = () => {
               <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-sans">
                 {student.name}
               </h1>
-              <p className="text-xs sm:text-sm text-brand-orange font-bold">
+              <p className="text-xs sm:text-sm text-brand-orange font-bold font-mono">
                 Target: {student.targetRole}
               </p>
               <p className="text-xs text-slate-600 font-mono font-bold">
@@ -83,6 +92,53 @@ export const Student360View: React.FC = () => {
         </div>
       </Card>
 
+      {/* 50/50 VISUAL TELEMETRY SECTION (RADAR + TRAJECTORY) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <Card className="lg:col-span-6 p-6 flex flex-col justify-between">
+          <div className="flex items-center justify-between pb-2 border-b border-[#CAD4E0]/40">
+            <div className="flex items-center gap-2">
+              <Activity className="w-4 h-4 text-brand-orange" />
+              <h3 className="text-sm font-black text-slate-900 font-mono uppercase">
+                Competency Polygon
+              </h3>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-orange-50 text-brand-orange shadow-neu-sm font-mono">
+              6 VECTORS
+            </span>
+          </div>
+
+          <div className="my-2">
+            <SkillRadarChart skills={radarSkills} targetThreshold={80} />
+          </div>
+
+          <div className="pt-3 border-t border-[#CAD4E0]/40 text-[11px] font-mono text-slate-500 text-center">
+            Benchmark: 80% Tier-1 Readiness Bar
+          </div>
+        </Card>
+
+        <Card className="lg:col-span-6 p-6 flex flex-col justify-between">
+          <div className="flex items-center justify-between pb-2 border-b border-[#CAD4E0]/40">
+            <div className="flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-emerald-600" />
+              <h3 className="text-sm font-black text-slate-900 font-mono uppercase">
+                Readiness Progression
+              </h3>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 shadow-neu-sm font-mono">
+              VELOCITY
+            </span>
+          </div>
+
+          <div className="my-2">
+            <ReadinessTrajectoryChart currentScore={student.readinessScore} />
+          </div>
+
+          <div className="pt-3 border-t border-[#CAD4E0]/40 text-[11px] font-mono text-slate-500 text-center">
+            Trajectory Status: <strong className="text-emerald-700 font-bold">{aiDiagnostic.trajectoryStatus}</strong>
+          </div>
+        </Card>
+      </div>
+
       {/* AI Diagnostic Summary */}
       <Card className="p-6 md:p-7" glow>
         <div className="flex items-center justify-between pb-3 border-b border-[#CAD4E0]/40 mb-3">
@@ -95,7 +151,7 @@ export const Student360View: React.FC = () => {
               Trajectory: {aiDiagnostic.trajectoryStatus}
             </span>
           </div>
-          <span className="text-xs font-bold text-slate-600">
+          <span className="text-xs font-bold text-slate-600 font-mono">
             Mentor: {aiDiagnostic.recommendedMentorAssignment}
           </span>
         </div>
